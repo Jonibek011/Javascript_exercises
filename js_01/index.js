@@ -40,4 +40,7 @@
 // console.log(null + 1);  : javob 1
 // console.log(undefined + 1); : javob NaN
 
-console.log(2 ** (2 + 1) / 2);
+// console.log(2 ** (2 + 1) / 2);
+console.log(1 !== "0" && true && "hey");
+console.log(1 !== "0" && false && "hey");
+console.log(!(1 !== "0" && true && "hey"));
