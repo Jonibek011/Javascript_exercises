@@ -30,12 +30,14 @@
 // console.log(9007199254740992n + 1n) - bigInt shu tarzda yaratiladi
 
 // undefined - o'zgaruvchiga qiymat biriktirilmaganligini bildiradi, data turi primitive tipi undefined
-//null - o'zgaruvchining ichi bo'sh ekanligini bildiradi, data turi primitive lekin tipi object
+// null - o'zgaruvchining ichi bo'sh ekanligini bildiradi, data turi primitive lekin tipi object
 // null va undefined larni qiymati tenglansa ture qaytadi
 // console.log(null == undefifned) : true
 // lekin ularni data typelari tenglansa false qaytadi
-//console.log(null === undefined) : false
+// console.log(null === undefined) : false
 
 //null boshlang'ich qiymat uchun ideal varyant xisoblanadi, sababi keyin xoxlagan data type dagi qiymat bilan o'zgartirsa bo'ladi
 // console.log(null + 1);  : javob 1
 // console.log(undefined + 1); : javob NaN
+
+console.log(2 ** (2 + 1) / 2);
