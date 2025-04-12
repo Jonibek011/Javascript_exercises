@@ -41,6 +41,26 @@
 // console.log(undefined + 1); : javob NaN
 
 // console.log(2 ** (2 + 1) / 2);
-console.log(1 !== "0" && true && "hey");
-console.log(1 !== "0" && false && "hey");
-console.log(!(1 !== "0" && true && "hey"));
+// console.log(1 !== "0" && true && "hey");
+// console.log(1 !== "0" && false && "hey");
+// console.log(!(1 !== "0" && true && "hey"));
+
+// FOR
+
+// for (let i = 1; i < 10; i = i + 1) {
+//   console.log(i);
+// }
+
+// for (i = 1; i < 10; i++) {
+//   console.log(i);
+// }
+
+// for (i = 0; i < 10; ++i) {
+//   console.log(i);
+// }
+
+var sum = 0;
+for (i = 1; i < 10; i++) {
+  console.log((sum += i));
+  if (sum === 10) break;
+}
