@@ -1,10 +1,10 @@
 //Berilgan objectning qiymati numberga teng bo'lganlarini valuesini qaytaring
 
-const obj = {
-  name: "Jonibek",
-  age: 29,
-  merried: true,
-};
+// const obj = {
+//   name: "Jonibek",
+//   age: 29,
+//   merried: true,
+// };
 
 // for (let i in obj) {
 //   let res = obj[i];
@@ -283,3 +283,56 @@ const obj = {
 // });
 
 // console.log(`${result[0]} -  ${result[1].position}`);
+
+// =============== Nested Objects ======================
+// Foydalanuvchilarning shaharlarini chiqarish
+
+// const users = {
+//   user1: { name: "Ali", address: { city: "Tashkent", street: "Yunusobod" } },
+//   user2: { name: "Laylo", address: { city: "Samarkand", street: "Registan" } },
+//   user3: { name: "Bek", address: { city: "Bukhara", street: "Kogon" } },
+// };
+
+// const array = Object.values(users);
+// // for (let i of array) {
+// //   console.log(i.address.city);
+// // }
+
+// array.map((arr) => {
+//   console.log(arr.address.city);
+// });
+
+//Foydalanuvchilar sonini hisoblang
+const data = {
+  groupA: {
+    user1: { age: 25 },
+    user2: { age: 30 },
+  },
+  groupB: {
+    user3: { age: 20 },
+    user4: { age: 28 },
+    user5: { age: 22 },
+  },
+};
+
+// const array = Object.values(data);
+// let sum = 0;
+// for (let i of array) {
+//   const subarray = Object.keys(i);
+//   sum += subarray.length;
+// }
+// console.log(sum);
+
+// const result = Object.values(data).reduce((acc, curr) => {
+//   acc += Object.keys(curr).length;
+//   return acc;
+// }, 0);
+
+// console.log(result);
+
+// Eng katta yoshli foydalanuvchini toping
+const members = {
+  a: { name: "Aziz", info: { age: 21, city: "Tashkent" } },
+  b: { name: "Zarina", info: { age: 24, city: "Namangan" } },
+  c: { name: "Timur", info: { age: 22, city: "Andijon" } },
+};
