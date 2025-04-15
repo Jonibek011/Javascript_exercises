@@ -184,3 +184,102 @@ const obj = {
 // }
 
 // console.log(name, name2);
+
+// =========================================================
+
+// REDUCE()
+
+// const names = ["Ali", "Zafar", "Madina"];
+
+// const result = names.reduce((acc, curr) => {
+//   acc[curr] = curr.length;
+//   return acc;
+// }, {});
+
+// console.log(result);
+
+//Arraydagi sonlar yig‘indisini reduce() bilan toping
+
+// const numbers = [4, 7, 2, 9, 1];
+
+// const result = numbers.reduce((acc, curr) => {
+//   acc += curr;
+//   return acc;
+// }, 0);
+
+// console.log(result);
+
+// const result = numbers.reduce((acc, curr) => acc + curr, 0);
+// console.log(result);
+
+// Object qiymatlari yig‘indisini reduce() yordamida toping
+
+// const salaries = {
+//   Alice: 120,
+//   Bob: 90,
+//   Charlie: 150,
+// };
+
+// // const array = Object.values(salaries);
+// // const result = array.reduce((acc, curr) => {
+// //   acc += curr;
+
+// //   return acc;
+// // }, 0);
+
+// const result = Object.values(salaries).reduce((a, c) => a + c, 0);
+
+// console.log(result);
+
+//reduce() yordamida eng katta maosh egasini toping
+// const salaries = {
+//   Alice: 120,
+//   Bob: 90,
+//   Charlie: 150,
+//   Diana: 140,
+// };
+// const result = Object.entries(salaries).reduce((acc, curr) => {
+//   return acc[1] < curr[1] ? curr : acc;
+// });
+
+// console.log(result[0]);
+
+//reduce() yordamida eng uzun ismlarini aniqlash
+
+// const names = {
+//   John: "Smith",
+//   Alice: "Johnson",
+//   Bob: "Lee",
+//   Charlie: "Brown",
+//   Diana: "Smith",
+// };
+
+// const array = Object.entries(names);
+
+// const result = array.reduce((acc, curr) => {
+//   return acc[0].length + acc[1].length > curr[0].length + curr[1].length
+//     ? acc
+//     : curr;
+// });
+
+// console.log(result[0], result[1]);
+
+//Eng ko‘p maosh olgan foydalanuvchini topish
+
+// const employees = {
+//   Jasur: { salary: 1000, position: "Developer" },
+//   Malika: { salary: 1800, position: "Designer" },
+//   Timur: { salary: 2200, position: "Manager" },
+//   Zarnigor: { salary: 2000, position: "QA" },
+// };
+
+// const array = Object.entries(employees);
+
+// const result = array.reduce((acc, curr) => {
+//   let prevSelary = acc[1].salary;
+//   let nextSelary = curr[1].salary;
+
+//   return prevSelary > nextSelary ? acc : curr;
+// });
+
+// console.log(`${result[0]} -  ${result[1].position}`);
