@@ -17,3 +17,15 @@
 //1) qaytargan qiymatini yaxlitlab qaytaradi
 //2) strining qiymat qaytaradi
 // 3) string numberlar ustida ishlay olmaydi
+
+//Number() - bu metod string tipidagi numberlarni number tipiga o'tkazish uchun ishlatiladi
+let num = "123";
+console.log(Number(num)); // 123
+
+//Kamchiligi
+// 1) agar string numberlar ustida arifmetik amal bajarilgan bo'lsa ("1+2"), uni o'qiy olmaydi
+// Number() faqat string number qiymatlarni izlaydi "1+2" da + ishorasi borligi sababli uni raqam sifatida tanimaydi
+
+let num1 = "1 +2";
+
+console.log(Number(num1)); // NaN
