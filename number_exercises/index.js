@@ -23,3 +23,16 @@
 // const getResult = (arr) => Math.max(...arr) - Math.min(...arr);
 
 // console.log(getResult(arr));
+
+// parametrga berilgan min max sonlar orasida random raqam qaytaruvchi funksiya yozing
+
+// const randomNumber = (min, max) => {
+//   num = Math.ceil(Math.random() * max);
+//   while (num < min) {
+//     num = Math.ceil(Math.random() * max);
+//   }
+
+//   console.log(num);
+// };
+
+// randomNumber(30, 50);
