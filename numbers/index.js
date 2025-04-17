@@ -2,6 +2,10 @@
 
 // katta miqdordagi numberlarni o'qishga osonroq bo'lishi uchun underscore dan foydalaniladi
 // console.log(100_000_000); // =100000000
+//lekin bu son stringda bo'lsa "1_000_000" uni numberga o'tkazilsa NaN chiqadi _ underscore belgisini nemberga o'tkazuvchi metodlar tanimaydi
+// let num = "1_000_000";
+// console.log(parseInt(num)); // lekin parseInt ga berilganda parse integer faqat birinchi number qiymatini qaytaradi yani 1 qaytdi
+
 // // 0 lar sonini qisqartirish uchun birinchi raqamdan keyin e yozib keyin 0 lar soni yoziladi
 // console.log(1e6); // 1 000 000
 // console.log(1e6 + 1); // 1 000 001
@@ -57,7 +61,17 @@
 //eval() string tipidagi numberlar orasida arifmetik amallar bajarilgan bo'lsa
 // o'sha arifmetik amalni bajarib natijani numberga aylantirib qaytaradi
 
-const num = "1+2";
-const num1 = "123";
-console.log(eval(num)); // 3
-console.log(eval(num1)); // 123
+// const num = "1+2";
+// const num1 = "123";
+// console.log(eval(num)); // 3
+// console.log(eval(num1)); // 123
+
+//================================================================
+
+//toString() - bu metod asosan string metodi hisoblanadi, lekin number tipidagi malumotni stringga o'zgartirishi mumkin
+// qiziq tomoni u agar parametr olsa numberni ikkilik sanoq sistemasiga o'tkazib string xolatda qaytarishi mumkin
+
+let num = 5;
+
+console.log(num.toString()); // '5'
+console.log(num.toString(2)); // '101'  - 5ni ikkilik sanoq sistemasidagi qiymati
