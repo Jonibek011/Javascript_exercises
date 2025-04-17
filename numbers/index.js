@@ -48,6 +48,16 @@
 //ya'ni agar "0.1 + 0.2" string raqam berilsa parseInt faqat o'zi topgan birinchi raqamni qaytaradi yani 0 ni qaytaradi
 // parseFloat esa o'zi topgan birinchi float raqamni qaytaradi ya'ni 0.1 ni qaytaradi
 
-let numStr = "0.1 + 0.2";
-console.log(parseInt(numStr)); // 0
-console.log(parseFloat(numStr)); // 0.1
+// let numStr = "0.1 + 0.2";
+// console.log(parseInt(numStr)); // 0
+// console.log(parseFloat(numStr)); // 0.1
+
+//=========================================================================
+
+//eval() string tipidagi numberlar orasida arifmetik amallar bajarilgan bo'lsa
+// o'sha arifmetik amalni bajarib natijani numberga aylantirib qaytaradi
+
+const num = "1+2";
+const num1 = "123";
+console.log(eval(num)); // 3
+console.log(eval(num1)); // 123
