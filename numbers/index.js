@@ -47,6 +47,11 @@
 // console.log(parseInt(stringNum)); // 1
 // console.log(parseFloat(stringNum)); // 1.22
 
+//Avzalligi
+//1) parseInt ikkilik sanoq sistemasida berilgan string raqamni o'nlik sanoq sistemasiga aylantirib qaytara oladi
+
+// console.log(parseInt("101", 2));
+
 //Kamchiliklari
 // Har ikkala metod string number ichida o'ziga tegishli qismni izlaydi
 //ya'ni agar "0.1 + 0.2" string raqam berilsa parseInt faqat o'zi topgan birinchi raqamni qaytaradi yani 0 ni qaytaradi
@@ -71,7 +76,26 @@
 //toString() - bu metod asosan string metodi hisoblanadi, lekin number tipidagi malumotni stringga o'zgartirishi mumkin
 // qiziq tomoni u agar parametr olsa numberni ikkilik sanoq sistemasiga o'tkazib string xolatda qaytarishi mumkin
 
-let num = 5;
+// let num = 5;
 
-console.log(num.toString()); // '5'
-console.log(num.toString(2)); // '101'  - 5ni ikkilik sanoq sistemasidagi qiymati
+// console.log(num.toString()); // '5'
+// console.log(num.toString(2)); // '101'  - 5ni ikkilik sanoq sistemasidagi qiymati
+
+//=======================================================================================
+
+// toPrecision() - bu metod parametriga nechi sonini olsa berilgan raqamning shuncha raqamini qaytaradi
+// agar berilgan raqam 0 dan kichik bolsa 0. dan keyin birinchi 0 bo'lmagan raqamdan boshlab qayradi
+
+let num = 12345;
+let num1 = 0.12345;
+let num2 = 0.00012345;
+
+// console.log(num.toPrecision(3)); // 1.23e+4
+// console.log(num1.toPrecision(3)); // 0.123
+// console.log(num2.toPrecision(3)); //0.000123
+
+// console.log(num.toPrecision(3) === 12345); //false
+
+// Kamchiligi
+//1) string qiymat qaytaradi
+//2) intiger sonlarda scientific numberlar qaytaradi va raqamni floatga aylantiradi
