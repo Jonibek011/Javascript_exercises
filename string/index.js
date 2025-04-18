@@ -49,3 +49,42 @@
 // har ikkala stringninng birinchi uch harfi bir xil yani "web", undan keyin str tugab qolganligi sababli solishtirish uchun harflar qolmaydi
 // va str1 hali tugamaganligi uchun metod uni kattaroq deb xisoblaydi va str yani web ni birinchi keladi deb xisoblaydi
 // va yuqoridagi xolatda -1 qaytadi
+
+// ==========================================================================
+//String larga index orqali access qilish mumnin
+let str = "webbrain";
+// // console.log(str[0]); // w
+
+// //stringda bo'sh joylar xam xisobga olinadi va index oladi
+// str = "a bcd";
+// console.log(str[1]); // '' bosh string qaytadi
+
+// Stirng immutable hisoblanadi yani uni tarkibini o'zgartirib bo'lmaydi
+
+// str = "webbrain";
+// str[0] = "v";
+// console.log(str[0]); //w
+
+// str[index] orqali access qilishda index uchun faqat musbat sonlar berilishi kerak manfiy sonlarda undefined qaytaradi
+// console.log(str[-1]); // undefined
+
+// Index orqali stringga access qilishda CharAt() metodidan ham foydalanish mumkin
+// console.log(str.charAt(1)); // parametrga berilgan indexdagi value ni qaytaradi
+
+// charAt() bilan str[index] orqali stringga access qilishning kichik bir farqi bor. agar stringni uzunligidan kichik bo'lgan
+//index kiritilsa har ikkisi bir ishlaydi va bir xil qiymat qaytaradi. Lekin agar string uzunligida katta son index sifatida berilsa charAt() bosh string qaytaradi
+//str[] esa undefined qaytaradi
+
+// console.log(str[100]); // undefined
+// console.log(str.charAt(-1)); // "" bo'sh string
+
+// demak ikkala usulning farqi charAt() ga mavjud bo'lmagan index yoki manfiy raqam berilsa bo'sh string qaytaradi
+// str[] esa undefined qaytaradi
+
+// ==============================================================================================================
+// at() = ushbu metod ham charAt va str[] lar kabi berilgan index dagi qiymatni qaytaradi, farqli tarafi esa at() manfiy qiymat olishi ham mumkin
+console.log(str.at(0)); // w
+console.log(str.at(-1)); // n  - yani at() ga manfiy qiymat berilsa stringni oxiridan boshlab qiymat chiqara boshlaydi
+//at(-1) string oxirgi indexsidagi qiymat at(-2) oxiridan bitta oldindagi indexning qiymati
+
+console.log(str.at(100)); // undefined -at() ham mavjud bo'lmagan indexlarda undefined qaytaradi
