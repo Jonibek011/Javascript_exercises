@@ -83,8 +83,11 @@ let str = "webbrain";
 
 // ==============================================================================================================
 // at() = ushbu metod ham charAt va str[] lar kabi berilgan index dagi qiymatni qaytaradi, farqli tarafi esa at() manfiy qiymat olishi ham mumkin
-console.log(str.at(0)); // w
-console.log(str.at(-1)); // n  - yani at() ga manfiy qiymat berilsa stringni oxiridan boshlab qiymat chiqara boshlaydi
-//at(-1) string oxirgi indexsidagi qiymat at(-2) oxiridan bitta oldindagi indexning qiymati
+// console.log(str.at(0)); // w
+// console.log(str.at(-1)); // n  - yani at() ga manfiy qiymat berilsa stringni oxiridan boshlab qiymat chiqara boshlaydi
+// //at(-1) string oxirgi indexsidagi qiymat at(-2) oxiridan bitta oldindagi indexning qiymati
 
-console.log(str.at(100)); // undefined -at() ham mavjud bo'lmagan indexlarda undefined qaytaradi
+// console.log(str.at(100)); // undefined -at() ham mavjud bo'lmagan indexlarda undefined qaytaradi
+
+// toUppercase() stringni har bir harfini katta xarfga o'zgartirib beruvchi metod
+//toLowercase() stringni har bir harfini kichik harfga o'zgartirib beruvchi metod
