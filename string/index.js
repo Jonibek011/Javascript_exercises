@@ -91,3 +91,36 @@ let str = "webbrain";
 
 // toUppercase() stringni har bir harfini katta xarfga o'zgartirib beruvchi metod
 //toLowercase() stringni har bir harfini kichik harfga o'zgartirib beruvchi metod
+// ==============================================================================================
+
+//indexOf() Bu metod ikkita parametr qabul qiladi va ikkinchi parametr optional
+// bu metod string ni ichidan qidirilayotgan qismning indexini qaytaradi
+
+let str1 = "webbrain";
+console.log(str1.indexOf("bb")); //2
+// bu misolda "webbrain" ichidan bb ketmaketligiga ega bo'lgan qismni qaytarishni aytyapmiz
+// va bizga 2 ni qaytaryapti yani bb ketma ketligi 2-indexdan boshlanmoqda
+
+//aytaylik bizga qaysidir indexdan keyingi qismda biror bo'lakni qidirmoqchimiz. bu xolatda indexOf ga ikkinchi parametrni berishimiz kerak
+
+str1 = "akmal";
+//yuqoridagi stringda ikkita a harfi bor agar indexOf('a') bersak bizga 0-indexni qaytaradi. agar bizga
+// birinchi indexdan keyin a harfi bor yo'qligini tekshirish zarur bo'sa
+console.log(str1.indexOf("a", 1)); // bu xolatda ikkinchi parametr qidiruvni qayerdan boshlashni belgilaydi, natija 3 ni qaytaradi
+
+// javaskript katta va kichik harflarni alohida belgilar deb xisoblaydi shuning uchun
+// agar:
+// str = "Akmal"; // bo'lsa biz a ni qidiruvga bersak:
+// console.log(str.indexOf("a")); // bu xolatda A ni ignore qiladi va  3 qaytaradi
+
+// Shuni takidlash kerakki agar indexOf ga qidiruvga berilgan bo'lagimiz stringni ichidan topilmasa -1 qaytadi
+console.log(str1.indexOf("d")); // -1
+
+// indexOf() bosh joylarni ham qidirishi mumin str.indexOf(' ')
+
+//lastIndexOf() = ushbu metod ham huddi indexOf singari ishlaydi faqat qidirishni stringning oxirirdan boshlaydi
+console.log(str1.lastIndexOf("a")); // 3
+// lastIndexOf ham ikkita parametr oladi va ikkinchi parametri qidiruvni qayerdan boshlashni belgilaydi
+//index hisoblashni esa string oxiridan emas string boshidan hisoblaydi
+str1 = "bbbabbbbbabbbabbba";
+console.log(str1.lastIndexOf("a", 4)); // 3 yani str1 ning 4-indexidan boshlab orqaga qidirib kelmoqda
