@@ -130,3 +130,13 @@
 
 // let str = "webbrain";
 // console.log(str.includes("in")); // true
+
+//===============================================================================================
+//startsWith(parametr) = bu metod asosiy string metodning parametriga berilgan bo'lak bilan boshlanadimi yoki yo'qligini qaytaradi
+let str = "Webbrain academy";
+console.log(str.startsWith("Web")); // true
+console.log(str.startsWith("web")); //false
+
+// endsWith(parametr) bu metod asosiy string metodning parametriga berilgan bo'lak bilan tugaganmi yo'qmi shuni qaytaradi
+console.log(str.endsWith("emy")); //true
+console.log(str.endsWith("y")); //true
