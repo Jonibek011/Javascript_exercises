@@ -21,7 +21,7 @@
 // console.log(str1.localeCompare(str2));  - bu xolatda str2 str1 dan oldin keladimi degan ma'noda solishtirilmoqda
 // agar javob true bo'lsa yani str2 alifbo bo'yicha str1 dan oldin kelsa 1 qaytadi agar aksincha bo'lsa -1 qaytadi agar
 //ikkala string mutlaqo bir xil bo'lsa 0 qaytadi
-// let str1 = "aplle";
+// let str1 = "apple";
 // let str2 = "banana";
 // console.log(str2.localeCompare(str1)); // bu yerda str1 yani apple str2 yani banana dan alifbo ketma ketligi bo'yicha oldinroqda
 // keladimi degan mantiq bilan solishtirilmoqda. birinchi harf solishtiriladi hamda a b dan oldin kelganligi sababli 1 qaytadi
@@ -52,10 +52,10 @@
 
 // ==========================================================================
 //String larga index orqali access qilish mumnin
-let str = "webbrain";
-// // console.log(str[0]); // w
+// let str = "webbrain";
+// console.log(str[0]); // w
 
-// //stringda bo'sh joylar xam xisobga olinadi va index oladi
+//stringda bo'sh joylar xam xisobga olinadi va index oladi
 // str = "a bcd";
 // console.log(str[1]); // '' bosh string qaytadi
 
@@ -72,7 +72,7 @@ let str = "webbrain";
 // console.log(str.charAt(1)); // parametrga berilgan indexdagi value ni qaytaradi
 
 // charAt() bilan str[index] orqali stringga access qilishning kichik bir farqi bor. agar stringni uzunligidan kichik bo'lgan
-//index kiritilsa har ikkisi bir ishlaydi va bir xil qiymat qaytaradi. Lekin agar string uzunligida katta son index sifatida berilsa charAt() bosh string qaytaradi
+//index kiritilsa har ikkisi bir xil ishlaydi va bir xil qiymat qaytaradi. Lekin agar string uzunligidan katta son index sifatida berilsa charAt() bosh string qaytaradi
 //str[] esa undefined qaytaradi
 
 // console.log(str[100]); // undefined
@@ -85,7 +85,7 @@ let str = "webbrain";
 // at() = ushbu metod ham charAt va str[] lar kabi berilgan index dagi qiymatni qaytaradi, farqli tarafi esa at() manfiy qiymat olishi ham mumkin
 // console.log(str.at(0)); // w
 // console.log(str.at(-1)); // n  - yani at() ga manfiy qiymat berilsa stringni oxiridan boshlab qiymat chiqara boshlaydi
-// //at(-1) string oxirgi indexsidagi qiymat at(-2) oxiridan bitta oldindagi indexning qiymati
+//at(-1) string oxirgi indexsidagi qiymat at(-2) oxiridan bitta oldindagi indexning qiymati
 
 // console.log(str.at(100)); // undefined -at() ham mavjud bo'lmagan indexlarda undefined qaytaradi
 
@@ -96,17 +96,17 @@ let str = "webbrain";
 //indexOf() Bu metod ikkita parametr qabul qiladi va ikkinchi parametr optional
 // bu metod string ni ichidan qidirilayotgan qismning indexini qaytaradi
 
-let str1 = "webbrain";
-console.log(str1.indexOf("bb")); //2
+// let str1 = "webbrain";
+// console.log(str1.indexOf("bb")); //2
 // bu misolda "webbrain" ichidan bb ketmaketligiga ega bo'lgan qismni qaytarishni aytyapmiz
 // va bizga 2 ni qaytaryapti yani bb ketma ketligi 2-indexdan boshlanmoqda
 
 //aytaylik bizga qaysidir indexdan keyingi qismda biror bo'lakni qidirmoqchimiz. bu xolatda indexOf ga ikkinchi parametrni berishimiz kerak
 
-str1 = "akmal";
+// str1 = "akmal";
 //yuqoridagi stringda ikkita a harfi bor agar indexOf('a') bersak bizga 0-indexni qaytaradi. agar bizga
 // birinchi indexdan keyin a harfi bor yo'qligini tekshirish zarur bo'sa
-console.log(str1.indexOf("a", 1)); // bu xolatda ikkinchi parametr qidiruvni qayerdan boshlashni belgilaydi, natija 3 ni qaytaradi
+// console.log(str1.indexOf("a", 1)); // bu xolatda ikkinchi parametr qidiruvni qayerdan boshlashni belgilaydi, natija 3 ni qaytaradi
 
 // javaskript katta va kichik harflarni alohida belgilar deb xisoblaydi shuning uchun
 // agar:
@@ -114,13 +114,19 @@ console.log(str1.indexOf("a", 1)); // bu xolatda ikkinchi parametr qidiruvni qay
 // console.log(str.indexOf("a")); // bu xolatda A ni ignore qiladi va  3 qaytaradi
 
 // Shuni takidlash kerakki agar indexOf ga qidiruvga berilgan bo'lagimiz stringni ichidan topilmasa -1 qaytadi
-console.log(str1.indexOf("d")); // -1
+// console.log(str1.indexOf("d")); // -1
 
 // indexOf() bosh joylarni ham qidirishi mumin str.indexOf(' ')
 
 //lastIndexOf() = ushbu metod ham huddi indexOf singari ishlaydi faqat qidirishni stringning oxirirdan boshlaydi
-console.log(str1.lastIndexOf("a")); // 3
+// console.log(str1.lastIndexOf("a")); // 3
 // lastIndexOf ham ikkita parametr oladi va ikkinchi parametri qidiruvni qayerdan boshlashni belgilaydi
 //index hisoblashni esa string oxiridan emas string boshidan hisoblaydi
-str1 = "bbbabbbbbabbbabbba";
-console.log(str1.lastIndexOf("a", 4)); // 3 yani str1 ning 4-indexidan boshlab orqaga qidirib kelmoqda
+// str1 = "bbbabbbbbabbbabbba";
+// console.log(str1.lastIndexOf("a", 4)); // 3 yani str1 ning 4-indexidan boshlab orqaga qidirib kelmoqda
+
+//=============================================================================================
+//includes() = bu metod parametriga berilgan bo'lak string ichida bor yo'qligini aniqlab beradi va boolean qiymat qaytaradi
+
+// let str = "webbrain";
+// console.log(str.includes("in")); // true
