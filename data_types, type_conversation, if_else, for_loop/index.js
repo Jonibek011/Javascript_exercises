@@ -1,7 +1,7 @@
 // Javascript 1995 yilda Brendan Each tomonidan yaratilgan. 1997 yildan boshlab o'zining engine ini ishlab chiqqandan keyin
 //Ecmascript deb atay boshlangan.
 //Javascript codlarni ishlashini terminalda, consoleda, online compilerlarda ko'rish mumkin
-// Javascript single sread language hisoblanadi, ya'ni bir vaqtning o'zida bitta amaliyotni bajara oladi. va yuqoridan pastga qarab
+// Javascript single thread language hisoblanadi, ya'ni bir vaqtning o'zida bitta amaliyotni bajara oladi. va yuqoridan pastga qarab
 // ketma-ketlik bilan o'qiydi.
 // o'zgaruvchilar - malumotni o'zida saqlash uchun kerak bo'ladi
 // agar biz mavjud bo'lmagan o'zgaruchini chaqirsak text is not defined xatosi chiqadi
