@@ -169,15 +169,23 @@
 //substring() - ushbu metod ham slice kabi asosiy stringning malum bir qismini kesib olib
 // yangi strin sifatida qaytaradi
 
-let text = "Jonibek Orifjonov";
-// let res = console.log(text.substring(0, 12)); // Jonibek Orif
+// let text = "Jonibek Orifjonov";
+// // let res = console.log(text.substring(0, 12)); // Jonibek Orif
 
-//Lekin substringning slice() dan bir necha farqlari bor
+// //Lekin substringning slice() dan bir necha farqlari bor
 
-//1) substingga manfiy qiymat berilsa uni 0 sifatida qabul qiladi, slice() esa manfiy qiymatni string oxiridan xisoblaydi
-console.log(text.substring(-1, 10)); // 0 dan 10 gacha oladi
-console.log(text.substring(1, -10)); // 0 - qiymatni o'zini oladi
+// //1) substingga manfiy qiymat berilsa uni 0 sifatida qabul qiladi, slice() esa manfiy qiymatni string oxiridan xisoblaydi
+// console.log(text.substring(-1, 10)); // 0 dan 10 gacha oladi
+// console.log(text.substring(1, -10)); // 0 - qiymatni o'zini oladi
 
-// 2) substringda birinchi qiymat ikkinchisidan katta bo'lsa uni avtomatik o'zgartirib oladi, slice() esan bo'sh string qaytaradi
-console.log(text.substring(6, 2)); // substring buni avtomatik (2,6) sifatida qabul qiladi
-console.log(text.slice(6, 2)); // bo'sh string qaytadi
+// // 2) substringda birinchi qiymat ikkinchisidan katta bo'lsa uni avtomatik o'zgartirib oladi, slice() esan bo'sh string qaytaradi
+// console.log(text.substring(6, 2)); // substring buni avtomatik (2,6) sifatida qabul qiladi
+// console.log(text.slice(6, 2)); // bo'sh string qaytadi
+
+// ====================================================================================================
+// substr() - bu metod ikkita parametr qabul qiladi, birinchi parametr nechinchi indexdan kesib olish boshlanishini belgilaydi,
+//ikkinchisi nechta belgini kesib olishni belgilaydi
+// let text = "Jonibek Orifjonov";
+// console.log(text.substr(2, 5)); // nibek - 2-indexdan boshlab 5 ta xarf kesib oladi
+
+//ESLATMA: substr() metodi deprecated bo'lgan
