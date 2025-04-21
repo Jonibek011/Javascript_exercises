@@ -140,3 +140,26 @@
 // endsWith(parametr) bu metod asosiy string metodning parametriga berilgan bo'lak bilan tugaganmi yo'qmi shuni qaytaradi
 // console.log(str.endsWith("emy")); //true
 // console.log(str.endsWith("y")); //true
+
+// ===========================================================================================
+//slice() -- array yoki stringdan bir qismini ajratib oladi va asl array yoki string o'zgarmaydi,
+// yangi array yoki string qaytaradi
+//slice() ikkita index oladi, birinchisi kesib olishni qayerdan boshalshni ko'rsatadi, ikkinchisi qayergacha kesib olishni ko'rsatadi
+let text = "webbrain academy";
+let textSlice = text.slice(1, 5);
+console.log(textSlice); // ebbr
+
+//slice ning ikkinchi parametri berilmasa, birinchi parametrga berilgan qiymatdan boshlab stringning oxirigacha kesib oladi
+console.log(text.slice(1)); //ebbrain academy
+
+//parametrga 0 qiymati berilsa stringni to'liq ko'chirib oladi
+console.log(text.slice(0));
+
+//slice manfiy qiymat ham olishi mumkin
+console.log(text.slice(1, -1)); //bu xolatda 1-indexdagi qiymatdan boshlab oxirgi qiymatgacha bo'lgan
+// stringni kesib olib qaytaradi // ebbrain academ
+console.log(text.slice(1, -5)); // 1-indexdan boshlab orqadan sanalganda 5-elementgacha
+
+console.log(text.slice(-7, -2)); // bu xolatda string oxiridan sanalganda 7-elementdan 2-elamentgacha qismni kesib olib qaytaradi
+
+console.log(text.slice()); // agar slice ga hech qanday qiymat berilmasa to'liq stringni qaytaradi
