@@ -264,3 +264,34 @@
 // console.log(str.)
 
 // =================================================================================================
+
+//match(regex) -ushbu metod sting ichidan ma'lum bir bo'lakni topib uni array sifatida qaytaradi
+//parametr sifatida oddiy so'zdan yoki regular expressiondan fooydalanish mumkin
+
+let text = "Men Javascript va Java o'rganyapman";
+
+// console.log(text.match("Java"));
+// console.log(text.match(/Java/));
+
+//match da natija sifatida qidirilgan bo'lak, uning indexi, qaysi contextdan qidirilgani, va qaysi guruhga mansub ekanligi haqida
+// arrayda ma'lumot qaytaradi, lekin arrayning length i 1 ga teng bo'ladi.
+//agar stringda qidirilayotgan bo'lak bir nechtani tashkil etsa match faqat birinchi topganini malumotlari bilan qaytaradi
+
+// regex g flag dan foydalanib stringdagi qidirilayotgan barcha bo'laklarni qaytarish mumkin
+// console.log(text.match(/Java/g));
+//bunda stringda nechta Java birikmasi ishtirok etgan bo'lsa hammasini array ko'rinishida qaytaradi
+//lekin bir nechta bo'lakni aniqlaganda bitta bo'lak aniqlagandagi kabi qo'shimcha ma'lumotlarni chiqarmaydi, faqat qidirilganlardan iborat arrayni qaytaradi
+// bunda arrayning lengthi qidiruvda topilganlarga teng bo'ladi yani bu orqali matnni ichida qidiriluvchilar qancha ekanini topish mumkin
+
+//matchAll() - bu metod match() ning akasi hisoblanadi, yani stringda qidiriluvchilarning har birini ma'lumotini to'liq qaytaradi
+
+// Lekin matchAll bir nechta jihatlari bilan matchdan farq qiladi va murakkabroq
+// 1) matchAll() parametr sifatida faqat regex qabul qiladi
+// 2) parametrdagi regex da g flag bo'lishi shart bo'lmasa hato qaytaradi
+// 3) matchAll() array qaytarmaydi. U har bir qidiriluvchi haqida to'liq ma'lumot beruvchi iterator qaytaradi
+// 4) matchAll() dan qaytgan datani ko'rish uchun qaytgan datani o'zgaruvchiga yuklab uni iteratsiya qilish kerak
+let result = text.matchAll(/Java/g);
+
+for (let match of result) {
+  console.log(match);
+}
