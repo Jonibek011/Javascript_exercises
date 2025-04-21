@@ -145,21 +145,39 @@
 //slice() -- array yoki stringdan bir qismini ajratib oladi va asl array yoki string o'zgarmaydi,
 // yangi array yoki string qaytaradi
 //slice() ikkita index oladi, birinchisi kesib olishni qayerdan boshalshni ko'rsatadi, ikkinchisi qayergacha kesib olishni ko'rsatadi
-let text = "webbrain academy";
-let textSlice = text.slice(1, 5);
-console.log(textSlice); // ebbr
+// let text = "webbrain academy";
+// let textSlice = text.slice(1, 5);
+// console.log(textSlice); // ebbr
 
-//slice ning ikkinchi parametri berilmasa, birinchi parametrga berilgan qiymatdan boshlab stringning oxirigacha kesib oladi
-console.log(text.slice(1)); //ebbrain academy
+// //slice ning ikkinchi parametri berilmasa, birinchi parametrga berilgan qiymatdan boshlab stringning oxirigacha kesib oladi
+// console.log(text.slice(1)); //ebbrain academy
 
-//parametrga 0 qiymati berilsa stringni to'liq ko'chirib oladi
-console.log(text.slice(0));
+// //parametrga 0 qiymati berilsa stringni to'liq ko'chirib oladi
+// console.log(text.slice(0));
 
-//slice manfiy qiymat ham olishi mumkin
-console.log(text.slice(1, -1)); //bu xolatda 1-indexdagi qiymatdan boshlab oxirgi qiymatgacha bo'lgan
-// stringni kesib olib qaytaradi // ebbrain academ
-console.log(text.slice(1, -5)); // 1-indexdan boshlab orqadan sanalganda 5-elementgacha
+// //slice manfiy qiymat ham olishi mumkin
+// console.log(text.slice(1, -1)); //bu xolatda 1-indexdagi qiymatdan boshlab oxirgi qiymatgacha bo'lgan
+// // stringni kesib olib qaytaradi // ebbrain academ
+// console.log(text.slice(1, -5)); // 1-indexdan boshlab orqadan sanalganda 5-elementgacha
 
-console.log(text.slice(-7, -2)); // bu xolatda string oxiridan sanalganda 7-elementdan 2-elamentgacha qismni kesib olib qaytaradi
+// console.log(text.slice(-7, -2)); // bu xolatda string oxiridan sanalganda 7-elementdan 2-elamentgacha qismni kesib olib qaytaradi
 
-console.log(text.slice()); // agar slice ga hech qanday qiymat berilmasa to'liq stringni qaytaradi
+// console.log(text.slice()); // agar slice ga hech qanday qiymat berilmasa to'liq stringni qaytaradi
+
+//==============================================================================================================
+
+//substring() - ushbu metod ham slice kabi asosiy stringning malum bir qismini kesib olib
+// yangi strin sifatida qaytaradi
+
+let text = "Jonibek Orifjonov";
+// let res = console.log(text.substring(0, 12)); // Jonibek Orif
+
+//Lekin substringning slice() dan bir necha farqlari bor
+
+//1) substingga manfiy qiymat berilsa uni 0 sifatida qabul qiladi, slice() esa manfiy qiymatni string oxiridan xisoblaydi
+console.log(text.substring(-1, 10)); // 0 dan 10 gacha oladi
+console.log(text.substring(1, -10)); // 0 - qiymatni o'zini oladi
+
+// 2) substringda birinchi qiymat ikkinchisidan katta bo'lsa uni avtomatik o'zgartirib oladi, slice() esan bo'sh string qaytaradi
+console.log(text.substring(6, 2)); // substring buni avtomatik (2,6) sifatida qabul qiladi
+console.log(text.slice(6, 2)); // bo'sh string qaytadi
