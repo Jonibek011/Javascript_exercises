@@ -193,5 +193,26 @@
 //======================================================================================
 // trim() - bu metod stingning boshida yoki oxirida white space (bo'sh joy) lar bo'lsa tozalab stringni o'zini qaytaradi
 
-let text = "                      Jonibek Orifjonov";
-console.log(text.trim());
+// let text = "                      Jonibek Orifjonov";
+// console.log(text.trim());
+
+//trimStart() - string boshidagi bo'sh joylarni chiqarib tashlaydi
+//trimEnd() - string oxiridagi bo'sh joylarni chiqarib tashlaydi
+
+// ==============================================================================================
+
+//split() - bu metod malumotlarni arrayga o'tkazish uchun ishlatiladi
+//stringni arrayga o'tkazishini ko'rib chiqamiz
+
+let text = "Jonibek Orifjonov";
+console.log(text.split()); // agar split ning parametriga hech narsa bermasak stringdan bitta array yasab beradi
+// yuqoridagi holatda ['Jonibek Orifjonov'] ko'rinishidagi array xosil bo'ladi
+
+console.log(text.split("")); // agar splitga parametriga bo'sh qo'shtirnoq berilsa stringning har bitta belgisini arrayga o'tkazadi
+// yuqoridagi xolatda ['J', 'o', 'n', 'i', 'b','e', 'k', ' ', 'O', 'r','i', 'f', 'j', 'o', 'n','o', 'v'] mana shunday array xosil bo'ladi
+
+//agar splitga qo'shtirnoq ichida bo'sh space bersak split(' ') stringda topilgan bo'sh joylardan bo'lib array yozib beradi
+console.log(text.split(" ")); // ['Jonibek', 'Orifjonov']
+
+// split ikkinchi parametr ham oladi, ikkinchi parametr maximal nechta bo'lakka ajratilishi mumkinligini ko'rsatadi
+console.log(text.split("o", 2)); //limit berilganda oxirgi limit bo'lingan joydan qolgan qismni tashlab yuboradi
