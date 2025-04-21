@@ -248,12 +248,19 @@
 
 //=============================================================================================
 //replace() - ushbu metod o'z nomidan kelib chiqib, string ichidagi biror qiymatni boshqa bir qiymatga almashtirish uchun ishlatiladi
+// almashtirish kerak bo'lgan qiymat string da bir nechta uchrasa birinchi topganini almashtiradi
 // replace ikkita parametr oladi replace(par1, par2)
 //birinchi parametr biz o'zgartirmoqchi bo'lgan string bo'lagi
 //ikkichi parametr qaysi qiymatga o'zgarishi kerakligi
 
-let str = "Jonibek Orijfonov";
+// let str = "Jonibek Orijfonov";
 
-console.log(str.replace("Orijfonov", "Oripov")); //Jonibek Oripov
+// console.log(str.replace("Orijfonov", "Oripov")); //Jonibek Oripov
 
-//replace metodi eski stringni o'zgartirmaydi yangi string qaytaradi
+// //replace metodi eski stringni o'zgartirmaydi yangi string qaytaradi
+
+// //replaceAll() - almashtirishga berilgan qiymatni stringni ichida nechta topsa hammasini almashtiradi
+
+// console.log(str.)
+
+// =================================================================================================
