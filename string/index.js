@@ -189,3 +189,9 @@
 // console.log(text.substr(2, 5)); // nibek - 2-indexdan boshlab 5 ta xarf kesib oladi
 
 //ESLATMA: substr() metodi deprecated bo'lgan
+
+//======================================================================================
+// trim() - bu metod stingning boshida yoki oxirida white space (bo'sh joy) lar bo'lsa tozalab stringni o'zini qaytaradi
+
+let text = "                      Jonibek Orifjonov";
+console.log(text.trim());
