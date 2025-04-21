@@ -228,20 +228,32 @@
 
 //valueOf() metodi primitive va object type dagi datalar qiymatini qaytaradi
 
-const obj = { name: "Jonibek", lastName: "Orifjonov" };
+// const obj = { name: "Jonibek", lastName: "Orifjonov" };
 
-console.log(obj.valueOf()); // { name: "Jonibek", lastName: "Orifjonov" }
+// console.log(obj.valueOf()); // { name: "Jonibek", lastName: "Orifjonov" }
 
-let str = "matn";
+// let str = "matn";
 
-console.log(str.valueOf()); // matn
+// console.log(str.valueOf()); // matn
 
-// valueOf() metodi oddiy datalarni qiymatini qaytarganda ularda hech qanday o'zgarish bo'lmaydi
-// qaysi xollarda valueOf() ni ishlatish samarali:
-// qachonki biz constructor bilan elon qilingan datalarni qiymatini chiqarmoqchi bo'lsak
+// // valueOf() metodi oddiy datalarni qiymatini qaytarganda ularda hech qanday o'zgarish bo'lmaydi
+// // qaysi xollarda valueOf() ni ishlatish samarali:
+// // qachonki biz constructor bilan elon qilingan datalarni qiymatini chiqarmoqchi bo'lsak
 
-const str1 = new String("Jonibek Orifjonov");
-console.log(str1); // [String: 'Jonibek Orifjonov'] degan qiymat qaytadi
-// agar bizga konstructor bilan elon qilingan datalarni sof value si kerak bo'lsa valueOf() dan foydalanishimiz mumkin
+// const str1 = new String("Jonibek Orifjonov");
+// console.log(str1); // [String: 'Jonibek Orifjonov'] degan qiymat qaytadi
+// // agar bizga konstructor bilan elon qilingan datalarni sof value si kerak bo'lsa valueOf() dan foydalanishimiz mumkin
 
-console.log(str1.valueOf()); // Jonibek Orifjonov
+// console.log(str1.valueOf()); // Jonibek Orifjonov
+
+//=============================================================================================
+//replace() - ushbu metod o'z nomidan kelib chiqib, string ichidagi biror qiymatni boshqa bir qiymatga almashtirish uchun ishlatiladi
+// replace ikkita parametr oladi replace(par1, par2)
+//birinchi parametr biz o'zgartirmoqchi bo'lgan string bo'lagi
+//ikkichi parametr qaysi qiymatga o'zgarishi kerakligi
+
+let str = "Jonibek Orijfonov";
+
+console.log(str.replace("Orijfonov", "Oripov")); //Jonibek Oripov
+
+//replace metodi eski stringni o'zgartirmaydi yangi string qaytaradi
