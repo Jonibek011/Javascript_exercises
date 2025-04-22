@@ -391,14 +391,33 @@
 
 // Berilgan so'zni 3 marta ketma-ket chiqaradigan funksiya yozish kerak.
 
-let text = "salom";
+// let text = "salom";
 
-// const threeCopy = (text) => {
-//   return text + text + text
-// }
+// // const threeCopy = (text) => {
+// //   return text + text + text
+// // }
 
-// console.log(threeCopy(text));
+// // console.log(threeCopy(text));
 
-//2-usul
+// //2-usul
 
-console.log(text.repeat(3));
+// console.log(text.repeat(3));
+
+//Berilgan jumlani qabul qilib, undagi eng uzun so'zni topish va qaytarish kerak. Agar bir nechta eng uzun so'z bo'lsa, ulardan birini qaytarish mumkin.
+
+const longWord = (text) => {
+  let res = text.split(" ");
+  let i = 0;
+  let result = "";
+  for (let j of res) {
+    if (i < j.length) {
+      i = j.length;
+      result = j;
+    }
+  }
+  console.log(result);
+};
+
+let text = "a aa aaa aaaa";
+
+longWord(text);
