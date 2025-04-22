@@ -268,7 +268,7 @@
 //match(regex) -ushbu metod sting ichidan ma'lum bir bo'lakni topib uni array sifatida qaytaradi
 //parametr sifatida oddiy so'zdan yoki regular expressiondan fooydalanish mumkin
 
-let text = "Men Javascript va Java o'rganyapman";
+// let text = "Men Javascript va Java o'rganyapman";
 
 // console.log(text.match("Java"));
 // console.log(text.match(/Java/));
@@ -290,8 +290,105 @@ let text = "Men Javascript va Java o'rganyapman";
 // 2) parametrdagi regex da g flag bo'lishi shart bo'lmasa hato qaytaradi
 // 3) matchAll() array qaytarmaydi. U har bir qidiriluvchi haqida to'liq ma'lumot beruvchi iterator qaytaradi
 // 4) matchAll() dan qaytgan datani ko'rish uchun qaytgan datani o'zgaruvchiga yuklab uni iteratsiya qilish kerak
-let result = text.matchAll(/Java/g);
+// let result = text.matchAll(/Java/g);
 
-for (let match of result) {
-  console.log(match);
-}
+// for (let match of result) {
+//   console.log(match);
+// }
+
+//Quyidagidan faqat harflarni olib, katta harflar bilan qaytaradigan funksiyani yoz:
+
+// const str = "Hello 123! Welcome_45.";
+
+// const toUpper = (str) => {
+//   let result = str.replace(/[^a-zA-Z]/g, "");
+//   return result.toUpperCase();
+// };
+
+// console.log(toUpper(str));
+
+// let input = "salom";
+
+// const reverseWord = (input) => {
+//   return input.split("").reverse().join("");
+// };
+
+// console.log(reverseWord(input));
+
+// Foydalanuvchi kiritgan so'zdan (a, e, i, o, u) unli harflarni olib tashlaydigan funksiya yoz.
+
+// let input = "salom";
+// const faqatUndosh = (input) => {
+//   return input.replace(/[aeiou]/g, "");
+// };
+
+// console.log(faqatUndosh(input));
+
+// String palindrom ekanligini tekshiradigan funksiya yoz.
+// (Palindrom — teskari o'qilganda ham bir xil bo'lgan so'z. Masalan, "anna", "level", "madam".)
+
+// let text = "level";
+
+// const palindromWords = (text) => {
+//   let text1 = text.split("").reverse().join("");
+//   if (text == text1) return true;
+//   else return false;
+// };
+
+// const palindromWords2 = (text) => {
+//   return text === text.split("").reverse().join("");
+// };
+
+// console.log(palindromWords(text));
+
+//Berilgan jumlada har bir so'zning bosh harfini katta qiladigan funksiya yoz.
+
+// let text = "salom dunyo";
+
+// const upperCase = (text) => {
+//   return text
+//     .split(" ")
+//     .map((word) => {
+//       return word[0].toUpperCase() + word.slice(1);
+//     })
+//     .join(" ");
+// };
+
+// console.log(upperCase(text));
+
+//Berilgan stringda necha marta a harfi qatnashganini top.
+
+// let text = "salom alik";
+
+//1-usul
+// const countLetter = (text) => {
+//   let arr = text.match(/a/g);
+//   return arr.length;
+// };
+
+// console.log(countLetter(text));
+
+//2-usul
+
+// let count = 0;
+// for (let i in text) {
+//   if (text[i] === "a") count += 1;
+// }
+
+// console.log(count);
+
+//3-usul
+
+// let count = 0;
+// let i = 0;
+
+// while (i < text.length) {
+//   if (text[i] === "a") count += 1;
+//   i++;
+// }
+
+// console.log(count);
+
+// Berilgan so'zni 3 marta ketma-ket chiqaradigan funksiya yozish kerak.
+
+let text = "salom";
