@@ -392,3 +392,13 @@
 // Berilgan so'zni 3 marta ketma-ket chiqaradigan funksiya yozish kerak.
 
 let text = "salom";
+
+// const threeCopy = (text) => {
+//   return text + text + text
+// }
+
+// console.log(threeCopy(text));
+
+//2-usul
+
+console.log(text.repeat(3));
