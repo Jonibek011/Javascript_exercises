@@ -405,19 +405,38 @@
 
 //Berilgan jumlani qabul qilib, undagi eng uzun so'zni topish va qaytarish kerak. Agar bir nechta eng uzun so'z bo'lsa, ulardan birini qaytarish mumkin.
 
-const longWord = (text) => {
-  let res = text.split(" ");
-  let i = 0;
-  let result = "";
-  for (let j of res) {
-    if (i < j.length) {
-      i = j.length;
-      result = j;
+// const longWord = (text) => {
+//   let res = text.split(" ");
+//   let i = 0;
+//   let result = "";
+//   for (let j of res) {
+//     if (i < j.length) {
+//       i = j.length;
+//       result = j;
+//     }
+//   }
+//   console.log(result);
+// };
+
+// let text = "a aa aaa aaaa";
+
+// longWord(text);
+
+//replace ni ishlatmasdan uni funksiyasini bajaruvchi funksiya yozish
+
+const replaceWords = (str, word, rep) => {
+  let arrs = str.split(" ");
+  newArr = [];
+  for (let arr of arrs) {
+    if (arr === word) {
+      arr = rep;
     }
+    newArr.push(arr);
   }
-  console.log(result);
+
+  return newArr.join(" ");
 };
 
-let text = "a aa aaa aaaa";
+let string = "web dasturlash web soha";
 
-longWord(text);
+console.log(replaceWords(string, "web", "Web"));
