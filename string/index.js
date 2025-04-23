@@ -424,19 +424,19 @@
 
 //replace ni ishlatmasdan uni funksiyasini bajaruvchi funksiya yozish
 
-const replaceWords = (str, word, rep) => {
-  let arrs = str.split(" ");
-  newArr = [];
-  for (let arr of arrs) {
-    if (arr === word) {
-      arr = rep;
-    }
-    newArr.push(arr);
-  }
+// const replaceWords = (str, word, rep) => {
+//   let arrs = str.split(" ");
+//   newArr = [];
+//   for (let arr of arrs) {
+//     if (arr === word) {
+//       arr = rep;
+//     }
+//     newArr.push(arr);
+//   }
 
-  return newArr.join(" ");
-};
+//   return newArr.join(" ");
+// };
 
-let string = "web dasturlash web soha";
+// let string = "web dasturlash web soha";
 
-console.log(replaceWords(string, "web", "Web"));
+// console.log(replaceWords(string, "web", "Web"));
