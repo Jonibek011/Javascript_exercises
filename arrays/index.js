@@ -1,24 +1,45 @@
-let arr = [
-  1,
-  2,
-  3,
-  "webbrain",
-  function () {},
-  true,
-  false,
-  null,
-  undefined,
-  "olma",
-];
+// let arr = [
+//   1,
+//   2,
+//   3,
+//   "webbrain",
+//   function () {},
+//   true,
+//   false,
+//   null,
+//   undefined,
+//   "olma",
+// ];
 
-// arrayga access qilish
-console.log(arr[0]); //1
-console.log(arr[arr.length - 1]); //olma
-console.log(arr[-1]); //undefined - arrayga to'g'ridan to'g'ri manfiy son bilan murojat qilish mumkin emas
+// // arrayga access qilish
+// console.log(arr[0]); //1
+// console.log(arr[arr.length - 1]); //olma
+// console.log(arr[-1]); //undefined - arrayga to'g'ridan to'g'ri manfiy son bilan murojat qilish mumkin emas
 
 //====================================================================================
 //at() - arrayda ham huddi stringdagi kabi ishlaydi, berilgan indexdagi qiymatni qaytaradi
 
-console.log(arr.at(-1)); //olma
+// console.log(arr.at(-1)); //olma
 
 //============================================================================
+//Arrayni elon qilish
+// const arr = new Array() //[]
+// const ar = [] // []
+//yuqoridagilarning har bir bo'sh array yasab beradi, new bilan array yasash konstructor array deyiladi
+// constructor array bir nechta xususiyatga egan
+
+// 1) agar new Array() ga bitta raqam parametr berilsa u arrayni lengthini bildiradi
+// let arr = new Array(5);
+// console.log(arr); // [<5 empty items>] - ichida beshta bo'sh item bo'lgan array yasab beradi
+// console.log(arr.length); // 5
+
+// agar parametriga ikkita son berilsa ikkita sondan iborat bo'lgan array yaratadi
+
+// let arr = new Array(5, 1);
+// console.log(arr); // [5,1]
+// console.log(arr.length); // 2
+
+//agar parametriga string berilsa ham uni arrayga aylantiradi
+let arr = new Array("5");
+console.log(arr); // ['5']
+console.log(arr.length); // 1
