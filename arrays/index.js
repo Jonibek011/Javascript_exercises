@@ -134,3 +134,10 @@
 //2) slicening ikkichi parametri qaysi indexgacha kesib olishni ko'rsatadi, splicening ikkinchi parametri nechta elementni kesib olishni ko'rsatadi
 //3) slice asosiy arrayni o'zgartirmaydi malumotni copy qilib oladi, splice esa asosiy arrayni o'zgartiradi malumotni cut qilib oladi
 // 4) slice() faqat array qismini copy qilib olish uchun ishlatiladi, splice array malumotlarini o'chiradi, qo'shadi va update qiladi
+
+//.concat() - stringdagi singari bir arrayga boshqa arraylarni qo'shish  uchun ishlatiladi
+
+// indexOf() lastIndexOf() - huddi stringdagi singari ishlatiladi
+//includes() ham stringdagi singari ishlatiladi
+
+//reverse() - array elementlarini teskarisiga o'girib beradi, yani oxirgi elementi birinchi elementga oxiridan bitta oldingisi ikkinchi elementga aylanadi vaxakozo
