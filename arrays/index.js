@@ -77,7 +77,7 @@
 
 //.length - arrayni uzunligini qaytaradi
 
-//.puth() - arrayning oxiriga element qo'shadi
+//.push() - arrayning oxiriga element qo'shadi
 
 // let arr = [1, 2, 3];
 // arr.push(4);
@@ -87,3 +87,6 @@
 //.pop() - arrayni oxirgi elementini ajratib olib uni qaytaradi
 // asl arrayni o'zgartiradi
 // array bo'sh bo'lsa undefined qaytaradi
+
+// shift() - arrayni boshidan malumot chiqarib yuboradi
+//unshift(parametr) - arrayni boshidan malumot qo'shadi
