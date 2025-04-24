@@ -93,7 +93,7 @@
 
 //splice() - arraydan malumotni o'chirish qo'shish va update qilish uchun ishlatiladi
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // arr.splice(3, 2);
 // console.log(arr);
@@ -112,16 +112,25 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //splice() ga parametr sifatida 0 ning o'zi berilsa arrayning hamma elementlarini kesib olib qaytaradi
 
-arr.splice(0);
-console.log(arr);
+// arr.splice(0);
+// console.log(arr);
 
 //splice() ga parametr berilmasa arrayni o'zgartirmaydi
 
 // 1) array elementlarini o'chiradi
-arr.slice(2, 3);
+// arr.slice(2, 3);
 
 // 2) arrayga yangi element qo'shadi
-arr.slice(2, 0, "hello"); // arrayning 2-indexidan boshlab 0 ta elementni o'chirib 'hello' ni qo'shadi
+// arr.slice(2, 0, "hello"); // arrayning 2-indexidan boshlab 0 ta elementni o'chirib 'hello' ni qo'shadi
 
 // 3) arrayni update qiladi
-arr.slice(2, 1, "hello"); // arrayning ikkinchi indexdagi elementini o'chirib o'rniga 'hello' ni yozadi
+// arr.slice(2, 1, "hello"); // arrayning ikkinchi indexdagi elementini o'chirib o'rniga 'hello' ni yozadi
+
+// slice() ikkita parametr oladi, birinchi parametr copy qilishni qaysi indexdan boshlashi
+//ikkinchi parametr qaysi indexgacha kesib olishi
+
+//slice() va splice() ning farqlari
+//1) slice() faqat ikkita parametr qabul qiladi, splice esa ikki va undan ortiq parametr qabul qilishi mumkin
+//2) slicening ikkichi parametri qaysi indexgacha kesib olishni ko'rsatadi, splicening ikkinchi parametri nechta elementni kesib olishni ko'rsatadi
+//3) slice asosiy arrayni o'zgartirmaydi malumotni copy qilib oladi, splice esa asosiy arrayni o'zgartiradi malumotni cut qilib oladi
+// 4) slice() faqat array qismini copy qilib olish uchun ishlatiladi, splice array malumotlarini o'chiradi, qo'shadi va update qiladi
