@@ -141,3 +141,26 @@
 //includes() ham stringdagi singari ishlatiladi
 
 //reverse() - array elementlarini teskarisiga o'girib beradi, yani oxirgi elementi birinchi elementga oxiridan bitta oldingisi ikkinchi elementga aylanadi vaxakozo
+
+//arrayda qaysi harf necha marta qatnashganini topish
+const countLetter = (arr) => {
+  let obj = {};
+  for (let item of arr) {
+    let result = item.split("");
+    for (let letter of result) {
+      if (letter in obj) {
+        obj[letter] += 1;
+      } else {
+        obj[letter] = 1;
+      }
+    }
+  }
+
+  for (let [key, value] of Object.entries(obj)) {
+    console.log(`${key}: ${value}`);
+  }
+};
+
+let arr = ["webbrain", "academy"];
+
+countLetter(arr);
