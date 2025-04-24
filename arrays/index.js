@@ -47,11 +47,20 @@
 //===========================================================================
 
 //arrayga qiymat biriktirish - bosh arrayga indexlar orqali qiymat biriktirish mumkin
+// let arr = [];
+// arr[0] = "hello";
+// console.log(arr); // ['hello']
+
+// // agar bo'sh arrayga birdaniga birinchi yoki undan yuqori indexga qiymat biriktirsak shu indexgacha bo'lgan indexlarning qiymati bo'sh item bo'lib qoladi
+
+// arr[10] = "world";
+// console.log(arr); // ['hello', <9 empty items>, 'world']
+
+/////////////////////////////////////////////////////////////////
+//Array.isArray(arr) - datani array yoki yo'qligini aniqlash uchun ishlatiladi
+
+//===================================================================
 let arr = [];
-arr[0] = "hello";
-console.log(arr); // ['hello']
 
-// agar bo'sh arrayga birdaniga birinchi yoki undan yuqori indexga qiymat biriktirsak shu indexgacha bo'lgan indexlarning qiymati bo'sh item bo'lib qoladi
-
-arr[10] = "world";
-console.log(arr); // ['hello', <9 empty items>, 'world']
+console.log(arr == 0); //true
+console.log(arr == "0"); // false
