@@ -60,7 +60,15 @@
 //Array.isArray(arr) - datani array yoki yo'qligini aniqlash uchun ishlatiladi
 
 //===================================================================
-let arr = [];
+// let arr = [];
 
-console.log(arr == 0); //true
-console.log(arr == "0"); // false
+// console.log(arr == 0); //true
+// console.log(arr == "0"); // false
+
+// ====================================================================
+//Arrayni loop qilish
+let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+for (let i of arr) {
+  console.log(i);
+}
