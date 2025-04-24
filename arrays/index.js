@@ -90,3 +90,38 @@
 
 // shift() - arrayni boshidan malumot chiqarib yuboradi
 //unshift(parametr) - arrayni boshidan malumot qo'shadi
+
+//splice() - arraydan malumotni o'chirish qo'shish va update qilish uchun ishlatiladi
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// arr.splice(3, 2);
+// console.log(arr);
+
+// splice() asosan 3 ta parametr qabul qiladi va undan ko'p ham qabul qilishi mumkin, uchinchi va undan keyingi
+//parametrlar optional
+
+// birinchi parametr qaysi indexdan kesib olishni boshlashni ko'rsatadi
+// ikkinchi parametr nechta elementni kesib olishni ko'rsatadi
+// uchinchi va undankeyingi parametrlar kesib olingan elementlar o'rniga qo'yilishi
+//kerek bo'lgan datalar
+
+//splice kesib olgan array elementlarini array sifatida qaytaradi
+// let newArr = arr.splice(2, 3);
+// console.log(newArr); // [3,4,5]
+
+//splice() ga parametr sifatida 0 ning o'zi berilsa arrayning hamma elementlarini kesib olib qaytaradi
+
+arr.splice(0);
+console.log(arr);
+
+//splice() ga parametr berilmasa arrayni o'zgartirmaydi
+
+// 1) array elementlarini o'chiradi
+arr.slice(2, 3);
+
+// 2) arrayga yangi element qo'shadi
+arr.slice(2, 0, "hello"); // arrayning 2-indexidan boshlab 0 ta elementni o'chirib 'hello' ni qo'shadi
+
+// 3) arrayni update qiladi
+arr.slice(2, 1, "hello"); // arrayning ikkinchi indexdagi elementini o'chirib o'rniga 'hello' ni yozadi
