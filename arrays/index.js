@@ -396,11 +396,39 @@
 
 //flat() - ichma ich arraylarni yoyib bitta array shakliga keltrib beradi
 //agar parametriga hech narsa berilmasa faqat bitta ichkarida turgan arraylarni yoyib beradi
-let arr = ["olma", "anor", [1, 2, 3, [4, 5]]];
+// let arr = ["olma", "anor", [1, 2, 3, [4, 5]]];
 
 // let flatArr = arr.flat();
 // console.log(flatArr); // ['olma', 'anor', 1, 2, 3, [4, 5]]
 
 // parametriga raqam berilsa parametriga berilgan raqam marta ichma ich joylashgan arraylarni bitta array ko'rinishiga keltirib beradi
-let flatArr = arr.flat(2);
-console.log(flatArr); // ['olma', 'anor', 1, 2, 3, 4, 5]
+// let flatArr = arr.flat(2);
+// console.log(flatArr); // ['olma', 'anor', 1, 2, 3, 4, 5]
+
+// =========================================================================
+//[10, 2, 5, 8, 1] arrayini kichikdan kattagacha tartibla.
+
+// let arr = [10, 2, 5, 8, 1];
+// console.log(arr.sort((a, b) => a - b));
+
+// //[1, [2, 3], [4, 5], [6, 7]] arrayini yassi qilib chiqaring.
+// let arr1 = [1, [2, 3], [4, 5], [6, 7]];
+
+// console.log(arr1.flat());
+
+// //["cat", "dog", "elephant"] arrayidan "dog" bor-yo'qligini tekshir.
+// let arr3 = ["cat", "dog", "elephant"];
+// console.log(arr3.includes("dog"));
+
+//==========================================================================================
+
+//fill(value, startIndex, endIndex) - arraydagi barcha elementlarni yoki malum bir oraliqdagi elementlarni  bitta qiymat bilan to'ldirib beradi
+//birinchi parametr almashtiriladigan qiymat, ikkinchi va uchinchi almashtirish boshlanadigan va tugaydigan index
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let fillArr = arr.fill(null, 0, 3); // arrayni birinchi uchta elementini null ga o'zgartiradi
+console.log(fillArr);
+
+//faqat bitta parametr berilsa arrayning hamma elementini shu parametr bilan almashtiradi
+console.log(arr.fill(null));
