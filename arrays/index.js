@@ -372,5 +372,22 @@
 // console.log(arr.findIndex((num) => num > 20));
 
 // ["apple", "banana", "avocado", "cherry"] arrayidan "a" bilan boshlanadigan birinchi mevaning indexini top.
-let arr = ["apple", "banana", "avocado", "cherry"];
-console.log(arr.findIndex((meva) => meva[0] == "a"));
+// let arr = ["apple", "banana", "avocado", "cherry"];
+// console.log(arr.findIndex((meva) => meva[0] == "a"));
+
+//========================================================================================
+
+//sort() = bu metod arrayni o'zgartirib tartiblaydi
+
+let str = ["a", "d", "b", "k"];
+
+console.log(str.sort()); //[ 'a', 'b', 'd', 'k' ]
+
+//raqamlarni sort qilish biroz boshqacharoq boladi
+
+let nums = [3, 6, 9, 1, 11, 12, 111];
+console.log(nums.sort()); // [1,11,111,12,3,6,9] shaklida sort qiladi yani birinchi raqamlarni to'liq taqqoslab
+// keyin ikkinchi raqamga o'tadi. bu xatolikni oldini olish uchun raqamlar boshqacha usul bilan sort qilinadi
+
+console.log(nums.sort((a, b) => a - b)); // [1,3,6,9,11,12,111] tartibida
+console.log(nums.sort((a, b) => b - a)); //[111,12,11,9,6,3,1] teskari tartibda
