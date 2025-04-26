@@ -463,3 +463,13 @@
 // ikkinchi parametr arrayga aylanayotgan har bir element uchun amal qiluvchi funksiya
 
 // const arr2 = Array.from(str, (s) => console.log(s));
+
+//===================================================================================
+
+//Array.isArray(value) - berilgan qiymatning array ekanligini aniqlash uchun ishlatiladi
+//parametriga tekshirmoqchi bo'lgan qiymat kiritiladi
+
+let str = "salom";
+let ar = [];
+console.log(Array.isArray(str)); //false
+console.log(Array.isArray(arr)); //true
