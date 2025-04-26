@@ -223,10 +223,57 @@
 
 //[5, 10, 15] arrayidan, har bir sonni stringga o'girib yangi array yarat
 
-let arr = [5, 10, 15];
+// let arr = [5, 10, 15];
 
-const newArr = arr.map((eachNumber) => {
-  return eachNumber.toString();
-});
+// const newArr = arr.map((eachNumber) => {
+//   return eachNumber.toString();
+// });
 
-console.log(newArr);
+// console.log(newArr);
+
+//=============================================================================================
+
+//filter() - array ichidan faqat shartga mos keladiganlarini yangi array sifatida qaytaradi
+//filter ichiga berilgan callback ham uchta parametr oladi ikkichi va uchinchisi optional
+// filter((element, index, array) => {})
+
+//[5, 12, 18, 7, 3] arraydan 10 dan katta sonlarni ajratib ol.
+// let arr = [5, 12, 18, 7, 3];
+// let newArr = arr.filter((number) => number > 10);
+// console.log(newArr);
+
+//[1, 2, 3, 4, 5, 6] arraydan toqlarni ajratib ol
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// const newArr = arr.filter((number) => number % 2 !== 0);
+// console.log(newArr);
+
+// ["apple", "banana", "cherry", "avocado"] arraydan "a" bilan boshlanadigan mevalarni ajratib ol.
+
+// const arr = ["apple", "banana", "cherry", "avocado"];
+
+// const newArr = arr.filter((element) => element[0] == "a");
+// console.log(newArr);
+
+//[10, 15, 20, 25, 30] arrayidan faqat 10 dan katta sonlarni ajratib olib, har birini 3 ga ko'paytir.
+
+// const arr = [10, 15, 20, 25, 30];
+
+// const newArr = arr.filter((num) => num > 10).map((num) => num * 2);
+// console.log(newArr);
+
+// [1, 2, 3, 4, 5, 6] arrayidan faqat toq sonlarni ajratib olib, har birining kvadratini ol.
+// const arr = [1, 2, 3, 4, 5, 6];
+// const newArr = arr.filter((num) => num % 2 !== 0).map((num) => num ** 2);
+// console.log(newArr);
+
+//["apple", "banana", "cherry", "avocado"] arrayidan "a" bilan boshlanadigan mevalarni ajratib olib, ularni katta harf bilan chiqar.
+
+// const arr = ["apple", "banana", "cherry", "avocado"];
+
+// const newArr = arr
+//   .filter((element) => element[0] == "a")
+//   .map((element) => element.toUpperCase());
+
+// console.log(newArr);
