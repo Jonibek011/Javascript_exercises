@@ -10,10 +10,10 @@
 
 //Destructuring - array yoki object ichidagi malumotlarni oson ajratib olish usuli
 
-const arr = [10, 20, 30];
+// const arr = [10, 20, 30];
 
-const [first, second, third] = arr;
+// const [first, second, third] = arr;
 
-console.log(first); // 10
-console.log(second); // 20
-console.log(third); // 30
+// console.log(first); // 10
+// console.log(second); // 20
+// console.log(third); // 30
