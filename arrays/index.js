@@ -482,4 +482,90 @@
 
 //===============================================================================================
 
-//flatMap() -
+//flatMap() - flat() hamda map() metodlaring birga jamlangan varyanti
+// flatMap() qabul qilgan arrayni har biri uchun map() funksiyasini qo'llaydi
+//hamda qaytgan natijani flat() qiladi, bunda flat faqat bir marotaba ichma-ich kiradi
+
+// const arr = [1, 2, [3, 4], [5, 6]];
+
+// let newArr = arr.flatMap((num) =>
+//   Array.isArray(num) ? num.map((n) => n * 2) : [num * 2]
+// );
+
+// console.log(newArr);
+
+//demak flatMap() qanday ishlaydi, u qabul qilayotgan arrayni itemlarga ajratadi, keyin har bir item ustida map() amaliyotini bajaradi
+// map amaliyotidan arraylar qaytishi mumkin, keyin jarayondan yig'ilgan arraylarni flat() qilib ularni tekislaydi
+
+// agar map qilayotganda ichma ich array kelib qolsa u arrayni ham iteratsiya qilib olish kerak, flatMap uni oldin flat qilib keyin map qila olmaydi
+// doim birinchi map amaliyoti bajariladi qaytgan natijalarni flat qiladi
+
+// const arr = [2, [4, 6], 8];
+
+// let newArr = arr.flatMap((number) =>
+//   Array.isArray(number) ? number.map((num) => num + 3) : [number + 3]
+// );
+// console.log(newArr);
+
+//nega [number + 3 ] qilinyapti chunki flatMap() ichkaridan doim array qaytishini kutadi
+
+// const arr1 = [1, [2, 3], 4, [5, 6, 7]];
+
+// let newArr1 = arr1.flatMap((number) =>
+//   Array.isArray(number) ? number.map((num) => num * 2) : [number * 2]
+// );
+// console.log(newArr1);
+
+// const words = ["hello", "world"];
+
+// let newWords = words.flatMap((word) => word.split(""));
+// console.log(newWords);
+
+// const users = [
+//   { name: "Ali", hobbies: ["football", "chess"] },
+//   { name: "Vali", hobbies: ["swimming", "basketball"] },
+//   { name: "Sami", hobbies: ["coding"] },
+// ];
+
+// const newUsers = users.flatMap((user) => user.hobbies);
+// console.log(newUsers);
+
+// const users = [
+//   { name: "Ali", hobbies: ["football", "chess", "running"] },
+//   { name: "Vali", hobbies: ["swimming", "basketball", "fishing"] },
+//   { name: "Sami", hobbies: ["coding", "gaming", "reading"] },
+// ];
+
+// const newUsers = users.flatMap((user) =>
+//   user.hobbies.filter((us) => us.length >= 7)
+// );
+// console.log(newUsers);
+
+// Faqat electronics kategoriyasidagi mahsulotlarni tanlang,
+
+// Har bir mahsulotning narxini %10 ga oshirib chiqing,
+
+// Bitta yassi array holatida natijani chiqarib bering.
+
+// const products = [
+//   { name: "Laptop", category: "electronics", price: 1200 },
+//   { name: "Smartphone", category: "electronics", price: 800 },
+//   { name: "Shirt", category: "clothing", price: 40 },
+//   { name: "Jeans", category: "clothing", price: 50 },
+//   { name: "Coffee Mug", category: "kitchen", price: 15 },
+//   { name: "Blender", category: "kitchen", price: 100 },
+// ];
+
+// const onlyElectronics = products.flatMap((product) => {
+//   if (product.category == "electronics") {
+//     return {
+//       name: product.name,
+//       category: product.category,
+//       price: product.price * 1.1,
+//     };
+//   } else {
+//     return [];
+//   }
+// });
+
+// console.log(onlyElectronics);
