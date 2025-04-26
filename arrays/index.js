@@ -356,6 +356,21 @@
 
 //["apple", "banana", "avocado"] arrayidan hamma meva nomi kamida 5 harfdan uzunmi deb tekshir.
 
-let arr = ["apple", "banana", "avocado"];
+// let arr = ["apple", "banana", "avocado"];
 
-console.log(arr.every((meva) => meva.length > 5));
+// console.log(arr.every((meva) => meva.length > 5));
+
+//====================================================================================
+
+//findIndex() - arrayda berilgan shartga mos keladigan birinchi elementning indexini qaytaradi
+//indexOf ga o'xshash lekin bunda berilgan shartga mosining indexini qaytaradi, indexOf esa berilgan bo'lakning indexini qaytaradi
+//findIndex() ham berilgan shartga mosini topolmasa -1 qaytaradi
+
+//[10, 15, 20, 25, 30] arrayidan 20 dan katta birinchi sonning indexini top.
+// let arr = [10, 15, 20, 25, 30];
+
+// console.log(arr.findIndex((num) => num > 20));
+
+// ["apple", "banana", "avocado", "cherry"] arrayidan "a" bilan boshlanadigan birinchi mevaning indexini top.
+let arr = ["apple", "banana", "avocado", "cherry"];
+console.log(arr.findIndex((meva) => meva[0] == "a"));
