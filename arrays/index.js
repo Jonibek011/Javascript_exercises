@@ -309,3 +309,21 @@
 // }, "");
 
 // console.log(newString);
+
+//===============================================================================================
+
+//find() - array ichida berilgan shartga mos keluvchi birinchi elementni qaytaradi
+// agar mos element topilmasa undefined qaytaradi
+//.find((element,index, array) => {return shart})
+
+//[2, 4, 6, 8, 10] arrayidan 6 dan katta birinchi sonni top.
+// let arr = [2, 4, 6, 8, 10];
+// let num = arr.find((a) => a > 6);
+// console.log(num);
+
+//["apple", "banana", "avocado", "cherry"] arrayidan "a" bilan boshlanadigan birinchi mevani top.
+
+let arr = ["apple", "banana", "avocado", "cherry"];
+
+let str = arr.find((element) => element[0] == "a");
+console.log(str);
