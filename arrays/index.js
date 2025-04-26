@@ -164,3 +164,35 @@
 // let arr = ["webbrain", "academy"];
 
 // countLetter(arr);
+
+// =====================================================================================================
+//Advanced array methods
+
+//forEach() - arrayni har bir elementini ketma ket olib, callback functionni chaqiradigan metod
+// bu metod yangi array qaytarmaydi
+// asosan 2 ta parametr oladi, birinchisi arrayning har bir elementiga beriladigan nom, ikkichisi har bir array elementining indexsi
+// const arr = ["olma", "anor", "banan", "nok"];
+
+// arr.forEach((arrayElementi, index) => {
+//   console.log(index, arrayElementi);
+// });
+
+// forEach() return qilmaydi undefined qaytaradi
+//forEach da break yoki continue ishlatib bo'lmaydi (for dan farqai)
+
+//numbers degan array bor, uning ichidagi barcha sonlarni konsolga chiqar:
+
+// const numbers = [2, 4, 6, 8, 10];
+// numbers.forEach((number) => {
+//   console.log(number);
+// });
+
+// const numbers = [2, 4, 6, 8, 10];
+// numbers.forEach((number) => {
+//   console.log(number * 2);
+// });
+
+const numbers = [2, 4, 6, 8, 10];
+numbers.forEach((number, index) => {
+  console.log(`${index} = ${number}`);
+});
