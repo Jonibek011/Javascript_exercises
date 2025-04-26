@@ -277,3 +277,35 @@
 //   .map((element) => element.toUpperCase());
 
 // console.log(newArr);
+
+//====================================================================================
+//reduce() = arraydagi barcha elementlarni birlashtirib yagona qiymat yaratadi
+
+//.reduce((accumulyator, currentValue, index, array) => {}, initialValue)
+
+//[1, 2, 3, 4, 5] arrayidan barcha sonlarni yig'ib chiq (yakuniy qiymatni qaytar)
+// let arr = [1, 2, 3, 4, 5];
+
+// let sumAll = arr.reduce((acc, curr) => {
+//   return acc + curr;
+// });
+// console.log(sumAll);
+
+// [10, 20, 30] arrayidan barcha sonlarni ko'paytir
+
+// const arr = [10, 20, 30];
+// const newArr = arr.reduce((acc, curr) => {
+//   return acc * curr;
+// }, 1);
+
+// console.log(newArr);
+
+//["apple", "banana", "cherry"] arrayidagi barcha mevalarni birlashtirib, bitta stringga aylantir.
+
+// const arr = ["apple", "banana", "cherry"];
+
+// let newString = arr.reduce((acc, curr) => {
+//   return acc + " " + curr;
+// }, "");
+
+// console.log(newString);
