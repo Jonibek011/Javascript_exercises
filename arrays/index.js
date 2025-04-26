@@ -379,15 +379,28 @@
 
 //sort() = bu metod arrayni o'zgartirib tartiblaydi
 
-let str = ["a", "d", "b", "k"];
+// let str = ["a", "d", "b", "k"];
 
-console.log(str.sort()); //[ 'a', 'b', 'd', 'k' ]
+// console.log(str.sort()); //[ 'a', 'b', 'd', 'k' ]
 
 //raqamlarni sort qilish biroz boshqacharoq boladi
 
-let nums = [3, 6, 9, 1, 11, 12, 111];
-console.log(nums.sort()); // [1,11,111,12,3,6,9] shaklida sort qiladi yani birinchi raqamlarni to'liq taqqoslab
+// let nums = [3, 6, 9, 1, 11, 12, 111];
+// console.log(nums.sort()); // [1,11,111,12,3,6,9] shaklida sort qiladi yani birinchi raqamlarni to'liq taqqoslab
 // keyin ikkinchi raqamga o'tadi. bu xatolikni oldini olish uchun raqamlar boshqacha usul bilan sort qilinadi
 
-console.log(nums.sort((a, b) => a - b)); // [1,3,6,9,11,12,111] tartibida
-console.log(nums.sort((a, b) => b - a)); //[111,12,11,9,6,3,1] teskari tartibda
+// console.log(nums.sort((a, b) => a - b)); // [1,3,6,9,11,12,111] tartibida
+// console.log(nums.sort((a, b) => b - a)); //[111,12,11,9,6,3,1] teskari tartibda
+
+//=======================================================================================
+
+//flat() - ichma ich arraylarni yoyib bitta array shakliga keltrib beradi
+//agar parametriga hech narsa berilmasa faqat bitta ichkarida turgan arraylarni yoyib beradi
+let arr = ["olma", "anor", [1, 2, 3, [4, 5]]];
+
+// let flatArr = arr.flat();
+// console.log(flatArr); // ['olma', 'anor', 1, 2, 3, [4, 5]]
+
+// parametriga raqam berilsa parametriga berilgan raqam marta ichma ich joylashgan arraylarni bitta array ko'rinishiga keltirib beradi
+let flatArr = arr.flat(2);
+console.log(flatArr); // ['olma', 'anor', 1, 2, 3, 4, 5]
