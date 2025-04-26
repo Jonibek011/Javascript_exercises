@@ -425,10 +425,41 @@
 //fill(value, startIndex, endIndex) - arraydagi barcha elementlarni yoki malum bir oraliqdagi elementlarni  bitta qiymat bilan to'ldirib beradi
 //birinchi parametr almashtiriladigan qiymat, ikkinchi va uchinchi almashtirish boshlanadigan va tugaydigan index
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-let fillArr = arr.fill(null, 0, 3); // arrayni birinchi uchta elementini null ga o'zgartiradi
-console.log(fillArr);
+// let fillArr = arr.fill(null, 0, 3); // arrayni birinchi uchta elementini null ga o'zgartiradi
+// console.log(fillArr);
 
 //faqat bitta parametr berilsa arrayning hamma elementini shu parametr bilan almashtiradi
-console.log(arr.fill(null));
+// console.log(arr.fill(null));
+
+//===========================================================================================
+
+//copyWithin() = array ichidagi elementlarni olib, o'sha array ichida boshqa joyga nusxa ko'chirib beradi
+//uchta parametr qabul qiladi
+//.copyWithin(target, start, end)
+//target - ko'chirilgan nusxani joylashni qaysi indexdan boshlashni ko'rsatadi
+//start - nusxa olishni qaysi indexdan boshlashni ko'rsatadi
+//end - nusxa olishni qaysi indexgacha davom ettirishni ko'rsatadi
+
+//agar end index berilmasa start index dan boshlab oxirigacha copy qiladi
+
+//copyWithin yangi array qaytarmaydi asosiy array ustiga yozadi
+
+// let arr = [10, 20, 30, 40, 50];
+
+// arr.copyWithin(0, 2);
+// console.log(arr);
+
+//======================================================================================
+//Array.from() - arrayga o'xshash malumotlardan array yaratish uchun ishlatiladi
+
+// let str = "hello world";
+// const arr = Array.from(str);
+// console.log(arr);
+
+//Array.from() ni bir arraydan copy olish uchun ham ishlatsa bo'ladi
+
+// ikkinchi parametr arrayga aylanayotgan har bir element uchun amal qiluvchi funksiya
+
+// const arr2 = Array.from(str, (s) => console.log(s));
