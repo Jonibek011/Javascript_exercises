@@ -341,6 +341,21 @@
 // console.log(arr.some((a) => a % 2 == 0));
 
 //["cat", "dog", "elephant"] arrayidan 5 harfdan uzun so'z bor-yo'qligini tekshir.
-const arr = ["cat", "dog", "elephant"];
+// const arr = ["cat", "dog", "elephant"];
 
-console.log(arr.some((element) => element.length > 5));
+// console.log(arr.some((element) => element.length > 5));
+
+//=================================================================================
+
+//every() = berilgan shart array elementlarining har biriga mos kelsa true qaytaradi
+// birorta element mos kelmay qolsa false qaytaradi
+
+//[2, 4, 6, 8, 10] arrayidan hammasi juft sonmi deb tekshir.
+// let arr = [2, 4, 6, 8, 10];
+// console.log(arr.every((num) => num % 2 == 0));
+
+//["apple", "banana", "avocado"] arrayidan hamma meva nomi kamida 5 harfdan uzunmi deb tekshir.
+
+let arr = ["apple", "banana", "avocado"];
+
+console.log(arr.every((meva) => meva.length > 5));
