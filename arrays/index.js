@@ -469,7 +469,17 @@
 //Array.isArray(value) - berilgan qiymatning array ekanligini aniqlash uchun ishlatiladi
 //parametriga tekshirmoqchi bo'lgan qiymat kiritiladi
 
-let str = "salom";
-let ar = [];
-console.log(Array.isArray(str)); //false
-console.log(Array.isArray(arr)); //true
+// let str = "salom";
+// let ar = [];
+// console.log(Array.isArray(str)); //false
+// console.log(Array.isArray(arr)); //true
+
+// let str = "12345";
+// let arr = [1, 2, 3];
+
+// console.log(Array.isArray(srt)); //false
+// console.log(Array.isArray(arr)); //true
+
+//===============================================================================================
+
+//flatMap() -
