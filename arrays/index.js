@@ -323,7 +323,24 @@
 
 //["apple", "banana", "avocado", "cherry"] arrayidan "a" bilan boshlanadigan birinchi mevani top.
 
-let arr = ["apple", "banana", "avocado", "cherry"];
+// let arr = ["apple", "banana", "avocado", "cherry"];
 
-let str = arr.find((element) => element[0] == "a");
-console.log(str);
+// let str = arr.find((element) => element[0] == "a");
+// console.log(str);
+
+//===================================================================================
+
+//some() - array ichida kamida bitta element shartga mos kelsa, true qaytaradi
+//agar hech biri mos kelmasa false qaytaradi
+
+//.some((element, index, array) => {})
+
+//[1, 3, 5, 7, 9] arrayidan juft son bor-yo'qligini tekshir.
+
+// let arr = [1, 3, 5, 7, 9];
+// console.log(arr.some((a) => a % 2 == 0));
+
+//["cat", "dog", "elephant"] arrayidan 5 harfdan uzun so'z bor-yo'qligini tekshir.
+const arr = ["cat", "dog", "elephant"];
+
+console.log(arr.some((element) => element.length > 5));
