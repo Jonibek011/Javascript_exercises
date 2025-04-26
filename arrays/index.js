@@ -192,7 +192,41 @@
 //   console.log(number * 2);
 // });
 
-const numbers = [2, 4, 6, 8, 10];
-numbers.forEach((number, index) => {
-  console.log(`${index} = ${number}`);
+// const numbers = [2, 4, 6, 8, 10];
+// numbers.forEach((number, index) => {
+//   console.log(`${index} = ${number}`);
+// });
+
+//===========================================================================
+
+// .map() - arrayning haar bir elemtni ustida amal bajarib yangi array qaytaruvchi metod
+//map(element, index, array) - map ham uchta parametr qabul qiladi, asosan ikkita parametr bilan ishlanadi
+
+//[1, 3, 5, 7, 9] arrayini ol, har bir elementni 3 barobarga ko'paytirib yangi array hosil qil
+
+// let arr = [1, 3, 5, 7, 9];
+
+// const newArray = arr.map((eachNumber) => {
+//   return eachNumber * 3;
+// });
+
+// console.log(newArray);
+
+//[10, 20, 30] arrayidan, har bir sonning kvadratini oladigan yangi array hosil qil
+
+// const arr = [10, 20, 30];
+
+// const newArr = arr.map((eachNumber) => {
+//   return eachNumber ** 2;
+// });
+// console.log(newArr);
+
+//[5, 10, 15] arrayidan, har bir sonni stringga o'girib yangi array yarat
+
+let arr = [5, 10, 15];
+
+const newArr = arr.map((eachNumber) => {
+  return eachNumber.toString();
 });
+
+console.log(newArr);
