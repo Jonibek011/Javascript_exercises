@@ -62,7 +62,22 @@ newSet.add("olma");
 
 // forEach() - setdagi har bir element ustida amaliyot bajaradi
 
+// const set = new Set([1, 2, 3, 4, 5]);
+// set.forEach((s) => {
+//   console.log(s + 1);
+// });
+
+//==============================================================
+
+//values() - set ichidagi qiymatlarni iterator shaklida chiqaradi
+
 const set = new Set([1, 2, 3, 4, 5]);
-set.forEach((s) => {
-  console.log(s + 1);
-});
+const setItems = set.values();
+console.log(setItems);
+
+const set4 = new Set([100, 200, 300]);
+for (let value of set4.values()) {
+  console.log(value); // 100, 200, 300
+}
+
+// (Note: Set uchun values() va keys() bir xil natija beradi, chunki Set faqat qiymatlar saqlaydi.)
