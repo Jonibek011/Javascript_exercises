@@ -44,5 +44,11 @@ newSet.add("olma");
 //===============================================================
 //delete(value) -set ichidan qiymatni o'chiradi
 
-newSet.delete("olma");
+// newSet.delete("olma");
+// console.log(newSet);
+
+//===============================================================
+
+//clear() - set ichidagi hamma qiymatlarni o'chiradi
+newSet.clear();
 console.log(newSet);
