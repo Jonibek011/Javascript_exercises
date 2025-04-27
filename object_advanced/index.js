@@ -58,3 +58,15 @@
 // };
 
 // console.log(obj2[id1]); //webbrain
+
+//===================================================================
+//Object.assign() = bitta yoki bir nechta objectni bitta yangi objectga nusxalash yoki birlashtirish uchun ishlatiladi
+
+//Object.assign(target, ...sources)
+
+const user = { name: "Ali" };
+const info = { age: 25 };
+const address = { city: "Tashkent" };
+
+const newUser = Object.assign({}, user, info, address);
+console.log(newUser);
