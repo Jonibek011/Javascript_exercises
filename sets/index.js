@@ -32,7 +32,17 @@
 const newSet = new Set();
 
 //add(value) - setga malumot qo'shadi agar u yo'q bo'lsa
-// newSet.add("olma");
+newSet.add("olma");
 // console.log(newSet); //Set(1) { 'olma' }
 // add metodi setga faqat bitta malumot qo'sha oladi
 //agar parametriga bir nechta malumot berilsa ularning faqat birinchisini set ga qo'shadi
+
+//=============================================================
+//.has(value) - set ichida qiymatni qidiradi topsa true topmasa false qaytaradi, arraydagi includes kabi
+// console.log(newSet.has("olma")); //true
+
+//===============================================================
+//delete(value) -set ichidan qiymatni o'chiradi
+
+newSet.delete("olma");
+console.log(newSet);
