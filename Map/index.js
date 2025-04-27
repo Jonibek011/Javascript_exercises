@@ -44,3 +44,26 @@
 // const obj = { key: "salom", key: 3 };
 // console.log(obj); //{ key: 3 }
 //malumot uchun objectlarda ham key unique bo'lishi kerak ekan va bir xil keyning oxirgisini qabul qilar ekan
+
+//==============================================================
+// .get() - berilgan kalit bo'yicha qiymat qaytaradi
+// mapdan malumot olish uchun ishlatiladi
+
+// const newMap = new Map([
+//   ["name", "Ali"],
+//   ["age", 3],
+//   ["isStudend", false],
+// ]);
+
+// console.log(newMap.get("name")); // Ali
+// console.log(newMap.get("age")); // 3
+
+//================================================================
+//Qolgan metodlar Set metodlari bilan bir xil
+//has(key) - kalit bor yoki yo'qligini tekshiradi
+
+//.delete(key) - Kalit va uning qiymatini o'chiradi
+
+// .clear() - hammasini o'chiradi
+
+//.size - Map ichidagi elementlar sonini qaytaradi
