@@ -15,27 +15,32 @@
 
 // console.log(newMap); //Map(3) { 'name' => 'Ali', 'age' => 3, 'isStudend' => false }
 
+//Bundan tashqari boshlang'ich qiymat sifatida objectlarni iterable xolatga keltirib olib bersa bo'ladi
+//Bunda objectni Object.entries() metodi orqali [[key, value], [key, value]] ko'rinishiga keltirib olinadi
+// const obj = { name: "Ali", age: 3 };
+
+// const newMap = new Map(Object.entries(obj));
 //===========================================================================
 
 // set() - mapga malumot qo'shish uchun ishlatiladi
 
-const newMap = new Map();
-newMap.set("meva", "olma");
-newMap.set("animal", "horse");
-newMap.set("animal", "horse"); // Map ham Set singari bir hil qiymatlarni faqat bir marta saqlaydi, takrorlanuvchi qiymatlarni saqlamaydi
+// const newMap = new Map();
+// newMap.set("meva", "olma");
+// newMap.set("animal", "horse");
+// newMap.set("animal", "horse"); // Map ham Set singari bir hil qiymatlarni faqat bir marta saqlaydi, takrorlanuvchi qiymatlarni saqlamaydi
 
-console.log(newMap); // Map(2) { 'meva' => 'olma', 'animal' => 'horse' }
+// console.log(newMap); // Map(2) { 'meva' => 'olma', 'animal' => 'horse' }
 
-newMap.set("animal", "dog");
-console.log(newMap); //Map(2) { 'meva' => 'olma', 'animal' => 'dog' }
+// newMap.set("animal", "dog");
+// console.log(newMap); //Map(2) { 'meva' => 'olma', 'animal' => 'dog' }
 // demak Map bir hil qiymatlarni faqat bir marta saqlaydi
-//undan tashqari bir xil key ga egan bo'lgan ikki qiymat berilsa ularning faqat oxirgi berilganini saqlaydi
+//undan tashqari bir xil key ga ega bo'lgan ikki qiymat berilsa ularning faqat oxirgi berilganini saqlaydi
 // keylar unique bo'lishi kerak
 
-newMap.set("hayvon", "horse");
-console.log(newMap); //Map(3) { 'meva' => 'olma', 'animal' => 'dog', 'hayvon' => 'horse' }
+// newMap.set("hayvon", "horse");
+// console.log(newMap); //Map(3) { 'meva' => 'olma', 'animal' => 'dog', 'hayvon' => 'horse' }
 // ko'rinib turganidek Mapda vaqat keylar unique bo'lishi kerak, qiymatlar takrorlanishi mumkin
 
-const obj = { key: "salom", key: 3 };
-console.log(obj); //{ key: 3 }
-//malumot uchun objectlarda ham key unique bo'lishi kerak ekan va bir keyning oxirgisini qabul qilar ekan
+// const obj = { key: "salom", key: 3 };
+// console.log(obj); //{ key: 3 }
+//malumot uchun objectlarda ham key unique bo'lishi kerak ekan va bir xil keyning oxirgisini qabul qilar ekan
