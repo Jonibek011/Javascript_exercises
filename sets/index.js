@@ -57,3 +57,12 @@ newSet.add("olma");
 
 //size() - set ichidagi qiymatlar sonini ko'rsatadi
 // console.log(newSet.size); // = size qavslarga ega emas
+
+//==============================================================
+
+// forEach() - setdagi har bir element ustida amaliyot bajaradi
+
+const set = new Set([1, 2, 3, 4, 5]);
+set.forEach((s) => {
+  console.log(s + 1);
+});
