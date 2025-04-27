@@ -88,6 +88,12 @@
 // 1) spread operatori bilan
 const newSet = new Set([1, 2, 3, 4, 5]);
 
-const arr = [...newSet];
+// const arr = [...newSet];
 
-console.log(arr); // [ 1, 2, 3, 4, 5 ]
+// console.log(arr); // [ 1, 2, 3, 4, 5 ]
+
+// 2) Array.from() bilan
+
+let arr1 = Array.from(newSet);
+
+console.log(arr1); //[ 1, 2, 3, 4, 5 ]
