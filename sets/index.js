@@ -50,5 +50,10 @@ newSet.add("olma");
 //===============================================================
 
 //clear() - set ichidagi hamma qiymatlarni o'chiradi
-newSet.clear();
-console.log(newSet);
+// newSet.clear();
+// console.log(newSet);
+
+//==============================================================
+
+//size() - set ichidagi qiymatlar sonini ko'rsatadi
+// console.log(newSet.size); // = size qavslarga ega emas
