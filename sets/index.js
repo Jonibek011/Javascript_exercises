@@ -29,10 +29,10 @@
 
 //===========================================================================
 //Set metodlari
-const newSet = new Set();
+// const newSet = new Set();
 
 //add(value) - setga malumot qo'shadi agar u yo'q bo'lsa
-newSet.add("olma");
+// newSet.add("olma");
 // console.log(newSet); //Set(1) { 'olma' }
 // add metodi setga faqat bitta malumot qo'sha oladi
 //agar parametriga bir nechta malumot berilsa ularning faqat birinchisini set ga qo'shadi
@@ -71,13 +71,23 @@ newSet.add("olma");
 
 //values() - set ichidagi qiymatlarni iterator shaklida chiqaradi
 
-const set = new Set([1, 2, 3, 4, 5]);
-const setItems = set.values();
-console.log(setItems);
+// const set = new Set([1, 2, 3, 4, 5]);
+// const setItems = set.values();
+// console.log(setItems);
 
-const set4 = new Set([100, 200, 300]);
-for (let value of set4.values()) {
-  console.log(value); // 100, 200, 300
-}
+// const set4 = new Set([100, 200, 300]);
+// for (let value of set4.values()) {
+//   console.log(value); // 100, 200, 300
+// }
 
 // (Note: Set uchun values() va keys() bir xil natija beradi, chunki Set faqat qiymatlar saqlaydi.)
+
+//==================================================================================================================================
+// SETDAN ARRAY YASASH USULLARI
+
+// 1) spread operatori bilan
+const newSet = new Set([1, 2, 3, 4, 5]);
+
+const arr = [...newSet];
+
+console.log(arr); // [ 1, 2, 3, 4, 5 ]
