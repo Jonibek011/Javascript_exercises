@@ -86,7 +86,7 @@
 // SETDAN ARRAY YASASH USULLARI
 
 // 1) spread operatori bilan
-const newSet = new Set([1, 2, 3, 4, 5]);
+// const newSet = new Set([1, 2, 3, 4, 5]);
 
 // const arr = [...newSet];
 
@@ -94,6 +94,10 @@ const newSet = new Set([1, 2, 3, 4, 5]);
 
 // 2) Array.from() bilan
 
-let arr1 = Array.from(newSet);
+// let arr1 = Array.from(newSet);
 
-console.log(arr1); //[ 1, 2, 3, 4, 5 ]
+// console.log(arr1); //[ 1, 2, 3, 4, 5 ]
+
+// const set = new Set(["apple", "banana", "cherry"]);
+// set.delete("banana");
+// const arr = Array.from(set);
