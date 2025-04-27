@@ -89,3 +89,7 @@
 // eski objectning nested objecti joylashgan reference ga murojaat qiladi va qiymat qaytaradi
 // oqibatda yangi xosil qilingan objectdagi nested object o'zgartirilsa shu referenceda joylashgan
 //eski objectdagi nested object ham o'zgaradi yani eski object ham o'zgaradi
+
+//===================================
+// structuredClone() metodi esa objectni full copy qiladi yani nested objectlarni ham butunlay
+//nusxalab yangi object ga ko'chiradi, bu esa deap copy deyiladi
