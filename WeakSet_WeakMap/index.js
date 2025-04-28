@@ -43,27 +43,27 @@
 // va saytga kirishda user ga ruxsat berish jarayonida ushbu userning malumotlari bor yo'qligini tekshirish uchun
 // WeakSet dan foydalanib .has() metodi orqali userni tekshirish mumkin
 
-const allowedUser = new WeakSet();
+// const allowedUser = new WeakSet();
 
-const login = (user) => {
-  allowedUser.add(user);
-};
+// const login = (user) => {
+//   allowedUser.add(user);
+// };
 
-const checkUser = (user) => {
-  if (allowedUser.has(user)) {
-    console.log("access granted");
-  } else {
-    console.log("access denied");
-  }
-};
+// const checkUser = (user) => {
+//   if (allowedUser.has(user)) {
+//     console.log("access granted");
+//   } else {
+//     console.log("access denied");
+//   }
+// };
 
-let user1 = { name: "Ali" };
-let user2 = { name: "Vali" };
+// let user1 = { name: "Ali" };
+// let user2 = { name: "Vali" };
 
-login(user1);
+// login(user1);
 
-checkUser(user1); //access granted
-checkUser(user2); //access denied
+// checkUser(user1); //access granted
+// checkUser(user2); //access denied
 
 //Bu yerda allowedUser ichidagilarni hech kim ko'rib ololmaydi va agar foydalanuvchi o'chib ketsa
 //u WeakSet dan ham avtomatik o'chib ketadi(xotira tozaligi uchun)
@@ -79,3 +79,36 @@ checkUser(user2); //access denied
 //3) Memory optimization (garvage Collection bilan birga)
 //Weakset ichida saqlangan object dasturdan butunlay o'chsa avtomatik ravishda WeakSet dan xam o'chadi
 // bu esa xotira o'z o'zidan tozalanishiga yordam beradi va katta loyihalarda server RAM ni tejaydi
+
+//========================================================================
+// 1. WeakSet yaratasan. (masalan: activeSessions)
+// ✅ 2. login(user) funksiyasi: foydalanuvchini sessiyaga qo'shadi.
+// ✅ 3. logout(user) funksiyasi: foydalanuvchini sessiyadan olib tashlaydi.
+// ✅ 4. checkSession(user) funksiyasi: foydalanuvchi sessiyada bormi-yo'qmi tekshiradi.
+
+const activeSessions = new WeakSet();
+
+const login = (user) => {
+  activeSessions.add(user);
+};
+
+const logout = (user) => {
+  activeSessions.delete(user);
+};
+
+const checkSession = (user) => {
+  return activeSessions.has(user);
+};
+
+let user1 = { name: "Ali" };
+let user2 = { name: "Vali" };
+
+login(user1);
+
+console.log(checkSession(user1));
+console.log(checkSession(user2));
+
+logout(user1);
+
+console.log(checkSession(user1));
+console.log(checkSession(user2));
