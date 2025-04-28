@@ -86,29 +86,49 @@
 // ✅ 3. logout(user) funksiyasi: foydalanuvchini sessiyadan olib tashlaydi.
 // ✅ 4. checkSession(user) funksiyasi: foydalanuvchi sessiyada bormi-yo'qmi tekshiradi.
 
-const activeSessions = new WeakSet();
+// const activeSessions = new WeakSet();
 
-const login = (user) => {
-  activeSessions.add(user);
-};
+// const login = (user) => {
+//   activeSessions.add(user);
+// };
 
-const logout = (user) => {
-  activeSessions.delete(user);
-};
+// const logout = (user) => {
+//   activeSessions.delete(user);
+// };
 
-const checkSession = (user) => {
-  return activeSessions.has(user);
-};
+// const checkSession = (user) => {
+//   return activeSessions.has(user);
+// };
 
-let user1 = { name: "Ali" };
-let user2 = { name: "Vali" };
+// let user1 = { name: "Ali" };
+// let user2 = { name: "Vali" };
 
-login(user1);
+// login(user1);
 
-console.log(checkSession(user1));
-console.log(checkSession(user2));
+// console.log(checkSession(user1));
+// console.log(checkSession(user2));
 
-logout(user1);
+// logout(user1);
 
-console.log(checkSession(user1));
-console.log(checkSession(user2));
+// console.log(checkSession(user1));
+// console.log(checkSession(user2));
+
+//===============================================================================================================
+
+//WeakMap - bu maxsus turdagi map bo'lib, kalit so'z sifatida faqat object saqlaydi
+// garbage collection bilan ishlaydi, agar object boshqa joyda ishlatilmasa, avtomatik o'chirib yuboriladi
+//size yoki forEach kabi metodlari yoq
+//Metodlari
+//.set(key, value)
+//.get(value)
+//.delete(value)
+//.has(value)
+
+//elon qilinishi
+const user = new WeakMap();
+
+//qachon ishlatamiz
+//Maxfiy malumotlar saqlash uchun  - masalan foydalanuvchi sessiya malumotlari, cashing qilish,
+//kompyuter xotirasini boshqarish
+
+//Garbage collection bilan ishlashda - object o'chsa WeakMap dan ham o'chadi -xotira tozalanadi
