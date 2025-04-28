@@ -61,3 +61,73 @@
 
 // agar hisoblash chegaradan chiqib ketsa javascript uni avtomatik to'g'rilaydi
 // misol uchun 32-aprel => 2-mayga aylanadi
+
+// Ikkita sana bir biridan ayrilsa uning farqi millisekundlarda chiqadi
+// let now = new Date("2025-04-28");
+// let yesterday = new Date("2025-03-28");
+
+// let result = now - yesterday;
+// console.log(result); //2678400000
+
+// Bugungi sanani "YYYY-MM-DD" formatda chiqaruvchi funksiya yoz.
+
+const getFullDate = () => {
+  const now = new Date();
+  let year = now.getFullYear();
+  //   let month = now.getMonth() + 1;
+  //   let day = now.getDate();
+  let month = String(now.getMonth() + 1).padStart(2, "0");
+  let day = String(now.getDate()).padStart(2, "0");
+
+  console.log(`${year}-${month}-${day}`);
+};
+
+// getFullDate();
+
+//Hozirgi vaqtdan 7 kun oldingi sanani hisoblab top.
+
+const getFullDate1 = () => {
+  const now = new Date();
+  now.setDate(now.getDate() - 7);
+  let year = now.getFullYear();
+
+  let month = String(now.getMonth() + 1).padStart(2, "0");
+  let day = String(now.getDate()).padStart(2, "0");
+
+  console.log(`${year}-${month}-${day}`);
+};
+// getFullDate1();
+
+//Hozirgi vaqtga 2 soat qo‘shib yangi vaqtni chiqar.
+
+const getFullDate2 = () => {
+  const now = new Date();
+  now.setHours(now.getHours() + 2);
+  let year = now.getFullYear();
+
+  let month = String(now.getMonth() + 1).padStart(2, "0");
+  let day = String(now.getDate()).padStart(2, "0");
+  let hour =
+    now.getHours() < 10
+      ? String(now.getHours()).padStart(2, "0")
+      : now.getHours();
+  let minutes =
+    now.getMinutes() < 10
+      ? String(now.getMinutes()).padStart(2, "0")
+      : now.getMinutes();
+
+  console.log(`${year}-${month}-${day}, ${hour}:${minutes}`);
+};
+// getFullDate2();
+
+//Foydalanuvchi tug‘ilgan yilini kiritadi.
+// Funksiya uning yoshini hisoblab chiqarsin.
+
+const findOld = (birthYear) => {
+  let now = new Date();
+  let thisYear = now.getFullYear();
+  let result = thisYear - birthYear;
+  console.log(`${result} yosh`);
+};
+
+// findOld(1996);
