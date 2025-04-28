@@ -67,3 +67,15 @@ checkUser(user2); //access denied
 
 //Bu yerda allowedUser ichidagilarni hech kim ko'rib ololmaydi va agar foydalanuvchi o'chib ketsa
 //u WeakSet dan ham avtomatik o'chib ketadi(xotira tozaligi uchun)
+
+// 2) Bazida itemlarga ishlov berilganmi yoki yoqligini bilish muhib bo'ladi
+// yani bizda objectlardan tashkil topgan item lar mavjud bo'lsa (user malumotlari bo'lishi mumkin)
+// ularning har birini ustida qandaydir proccess o'tkazish zarur bo'lsa WeakSet orqali
+// item ustida procces o'tkazilgan yoki yo'qligini bilish mumkin
+//buning uchun procces o'tkazilgan itemlarni WeakSet ga .add(item) qilamiz va
+// if item has bo'lsa WeakSet da konsole ga item already proccessed yozuvini chiqaramiz
+// else bo'lsa uni proccess ga qo'shamiz
+
+//3) Memory optimization (garvage Collection bilan birga)
+//Weakset ichida saqlangan object dasturdan butunlay o'chsa avtomatik ravishda WeakSet dan xam o'chadi
+// bu esa xotira o'z o'zidan tozalanishiga yordam beradi va katta loyihalarda server RAM ni tejaydi
