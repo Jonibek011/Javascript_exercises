@@ -105,4 +105,45 @@ const power = (num1, num2) => {
 
 // console.log(power(3, 4));
 
-const fac = (n) => {};
+const fac = (n) => {
+  if (n === 1) return 1;
+  return n * fac(n - 1);
+};
+
+// Berilgan arraydagi raqamlar yig'indisini rekursiya yordamida hisoblang.
+
+const sumArray = (arr) => {
+  if (arr.length === 0) return 0;
+
+  let num = arr.shift();
+  return num + sumArray(arr);
+};
+
+// console.log(sumArray([1, 2, 3, 4, 5]));
+//=====================================================================
+//Berilgan string ichidagi barcha harflarni katta harfga o‘tkazadigan rekursiv funksiya yozing.
+//Bunda harflarni katta kichikka ajratish uchun ASCII code dan foydalanamiz
+//belgini ASCII kodini toppish uchun .charCodeAt(0) dan foydalanamiz
+
+console.log("a".charCodeAt(0)); // 97
+console.log("z".charCodeAt(0)); // 122
+
+//demak charCode i 97 dan 122 gacha bo'lgan belgilar kichik harflar xisoblanadi
+
+console.log("A".charCodeAt(0)); // 65
+console.log("Z".charCodeAt(0)); // 90
+
+//demak charCode i 65 dan 90 gacha bo'lgan belgilar Katta harflar xisoblanadi
+
+// endi agar 97-65 qilsak javob 32, bu degani biror kichik harfning shu xarning katta belgisi orasida 32 farq bor
+// yani a ning charCode idan 32 ayirsak A ga teng bo'ladi
+
+//CharCode dan belgini topish uchun String.fromCharCode() dan foydalanamiz
+console.log(String.fromCharCode(65)); // A
+
+//shulardan foydalanib yuqoridagi masalani yechamiz
+
+const toUpperCaseRecursion = (str) => {
+  //dastlab base case ni tekshirib olamiz
+  if (str.length === 0) return;
+};
