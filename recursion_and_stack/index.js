@@ -125,13 +125,13 @@ const sumArray = (arr) => {
 //Bunda harflarni katta kichikka ajratish uchun ASCII code dan foydalanamiz
 //belgini ASCII kodini toppish uchun .charCodeAt(0) dan foydalanamiz
 
-console.log("a".charCodeAt(0)); // 97
-console.log("z".charCodeAt(0)); // 122
+// console.log("a".charCodeAt(0)); // 97
+// console.log("z".charCodeAt(0)); // 122
 
 //demak charCode i 97 dan 122 gacha bo'lgan belgilar kichik harflar xisoblanadi
 
-console.log("A".charCodeAt(0)); // 65
-console.log("Z".charCodeAt(0)); // 90
+// console.log("A".charCodeAt(0)); // 65
+// console.log("Z".charCodeAt(0)); // 90
 
 //demak charCode i 65 dan 90 gacha bo'lgan belgilar Katta harflar xisoblanadi
 
@@ -139,11 +139,23 @@ console.log("Z".charCodeAt(0)); // 90
 // yani a ning charCode idan 32 ayirsak A ga teng bo'ladi
 
 //CharCode dan belgini topish uchun String.fromCharCode() dan foydalanamiz
-console.log(String.fromCharCode(65)); // A
+// console.log(String.fromCharCode(65)); // A
 
 //shulardan foydalanib yuqoridagi masalani yechamiz
 
 const toUpperCaseRecursion = (str) => {
   //dastlab base case ni tekshirib olamiz
-  if (str.length === 0) return;
+  if (str.length === 0) return "";
+  let char = str[0];
+  let charCode = char.charCodeAt(0);
+
+  if (charCode >= 97 && charCode <= 122) {
+    char = String.fromCharCode(charCode - 32);
+  } else return char;
+
+  return char + toUpperCaseRecursion(str.slice(1));
 };
+
+str = "avcsA";
+
+// console.log(toUpperCaseRecursion(str));
