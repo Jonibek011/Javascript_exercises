@@ -53,3 +53,15 @@
 // - natijada code juda tez ishlay boshlaydi
 
 //========================= EXACUTION =============================
+//Execution bosqichi bytecode ga aylantirilgan kodlarni bajarish bosqichi
+
+//bu sosqich quyidagilarni o'z ichiga oladi
+//1.execution context yaratish - har bir funksiya chaqirilishida yoki global codening bajarilishida Execution context yaratiladi
+//2.Call stack orqali boshqaruv - javascriptda barcha bajarish jarayoni call stack orqali nazorat qilinadi
+//3.Memory Heap bilan ishlash - execution bosqichida barcha objectlar, massivlar va funksiyalar Memory Heapga joylashtiriladi
+//primitive tiplar Stackda saqladi
+
+//asynchron kodlar stackga tushib bu yerdan web API ga o'tadi u yerda kutish rejimi tugagach yoki malumotni olib bo'lgach
+// task queue ga o'tadi, promise esa microtask queueu ga o'tadi
+//tasq queue - bajarilish uchun navbatda turgan vazifalar
+//Elevt loop agar call stack bo'sh bo'lsa task queue dagi vazifani stackga olib o'tadi
