@@ -21,3 +21,35 @@
 //Endi kompilyatsiyadan o'tgan kod Call Stack orqali bajariladi
 //har bir funksiya chaqirilganda u stack frame sifatida stack ga qo'shiladi
 //Engine Memory Heap va Stack orqali malumotlarni boshqaradi
+
+//============== PARSING ================================
+// bu bosqichda kodlar tokenlarga ajratiladi
+//token - eng kichik manoli birlik let, x, =, 5,; kabi
+//bu jarayon scanner deb ataladigan kichik modul orqali amalga oshiriladi
+// tokenlar asosida kodning mantiqiy tuzilmasi (strukturasi) aniqlanadi
+//Engine tokenlarni Abstract Syntax Tree nomli daraxt tuzilmasiga aylantiradi
+//Nega bu bosqich muhim - Syntax error aynan shu bosqichda aniqlanadi
+//Shu bosqichda xatolik aniqlansa, keyingi bosqichlarga o'tmaydi
+
+//============= COMPILATION ======================================
+// Compilyatsiya bu - javascript kodini mashina tushunadigan tilga o'girilishi
+//Javascript engine Just-In-Time Compilation deb ataladigan  yondashuvni ishlatadi
+//JIT avval interpretatsiya qilinadi, so'ng optimallashtirib kompilyatsiya qilinadi
+// interpretatsiya bu javascript konding bytecode ga aylantirilishi
+//bytecode esa javascript tili bilan mashina tilining o'rtasidagi til, bu tilni javascript engine o'qiydi
+
+//Compilation bosqichi tarkibiy qismlari
+//1. Interpreter
+// - AST asosida bytecode ishlab chiqaradi
+// - bu kod darxol bajarilishi mumkin
+// - juda tez ishlaydi, lekin optimallashtirilmagan
+
+//2.Profiler (Monitoring)
+// - Kod bajarilayotgan paytda qaysi funksiyalar tezt-tez chaqirilayotganini, odatdagi qiymatlarni va boshqa statistikani kuzatadi
+// - bu bosqich hot code ni aniqlaydi
+
+//3.Compiler
+// - Profiler kuzatgan hot code ni olib, optimallashtiradi va native machine code ga aylantiradi
+// - natijada code juda tez ishlay boshlaydi
+
+//========================= EXACUTION =============================
