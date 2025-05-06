@@ -30,29 +30,94 @@ const user = new Person("Jonibek", 28);
 // extends - bir class boshqa class dan meros olishini bildiradi
 // super - parent classga murojaat qilish uchun ishlatiladi
 
-class Animal {
-  // ota class
-  constructor(name) {
+// class Animal {
+//   // ota class
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   speak() {
+//     console.log(`${this.name} makes a noise`);
+//   }
+// }
+
+// class Dog extends Animal {
+//   //bola class
+//   speak() {
+//     console.log(`${this.name} barks`);
+//   }
+
+//   dringk() {
+//     console.log(`${this.name} drinks milk`);
+//   }
+// }
+
+// const rex = new Dog("Rex");
+
+// rex.speak(); // Rex barks
+// rex.dringk(); // Rex drinks milk
+
+//super() ota classning constructorini chaqiradi
+//odatda constructor ichida birinchi qatorda yoziladi
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+
+// class Cat extends Animal {
+//   constructor(name, color) {
+//     super(name); // ota class ga name uzatyapti
+//     this.color = color; // o'zining yangi hususiyati
+//   }
+
+//   describe() {
+//     console.log(`${this.name} is a ${this.color} cat.`);
+//   }
+// }
+
+// const cat = new Cat("Mosh", "kulrang");
+// cat.describe();
+
+//superni ishlatish qachon foyda beradi
+// bizda bir class bor
+
+class Students {
+  constructor(name, lastName, age, className) {
     this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+    this.className = className;
   }
 
-  speak() {
-    console.log(`${this.name} makes a noise`);
+  //some code
+}
+
+// endi bizga huddi shu yuqoridagi classning constructor parametri singari xossali klass kerak lekin bir ikkita qo'shimchalari bor
+//misol uchun middleName va hobby kabi
+
+class Talaba extends Students {
+  constructor(name, lastName, age, className, middleName, hobby) {
+    super(name, lastName, age, className);
+    this.middleName = middleName;
+    this.hobby = hobby;
+  }
+
+  describe() {
+    console.log(
+      `${this.lastName} ${this.name} ${this.middleName} ${this.age} yoshda. Bo'sh vaqtida ${this.hobby} bilan shug'ullanadi`
+    );
   }
 }
 
-class Dog extends Animal {
-  //bola class
-  speak() {
-    console.log(`${this.name} barks`);
-  }
+const talaba = new Talaba(
+  "Jonibek",
+  "Orifjonov",
+  28,
+  "highschool",
+  "Baxromjon o'g'li",
+  "IT"
+);
 
-  dringk() {
-    console.log(`${this.name} drinks milk`);
-  }
-}
-
-const rex = new Dog("Rex");
-
-rex.speak(); // Rex barks
-rex.dringk(); // Rex drinks milk
+talaba.describe();
