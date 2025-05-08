@@ -140,20 +140,40 @@ const b = new Book("Javasctipt");
 
 // Metodlar
 //Class ichidagi funksiyalarni oddiy yozamiz (function kalit so'zisiz)
-class Animal {
-  constructor(name) {
-    this.name = name;
-  }
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
 
-  speak() {
-    console.log(`${this.name} ovoz chiqaryapti`);
-  }
-}
+//   speak() {
+//     console.log(`${this.name} ovoz chiqaryapti`);
+//   }
+// }
 
-const dog = new Animal("It");
-// dog.speak() // It ovoz chiqaryapti
+// const dog = new Animal("It");
+// // dog.speak() // It ovoz chiqaryapti
 
-//ota classdan metod meros olish
+// //ota classdan metod meros olish
+// class Animal {
+//   speak() {
+//     console.log("Hayvon ovoz chiqaryapti");
+//   }
+// }
+
+// class Dog extends Animal {
+//   speak() {
+//     // ota klassdagi metodni chaqiryapti
+//     super.speak();
+//     // o‘zining qo‘shimcha kodini qo‘shyapti
+//     console.log("It vovilladi");
+//   }
+// }
+
+// const dog = new Dog();
+// dog.speak();
+// // Natija:
+// // Hayvon ovoz chiqaryapti
+// // It vovilladi
 
 //Class expression
 //Class ni let yoki const bilan o'zgaruchiga biriktirish mumkin
@@ -242,3 +262,13 @@ class Car {
 
 const car = new Car();
 car.drive(); // Engine ishlar //Mashina yurdi
+
+//✅ Yakuniy eslatmalar
+// class ---------- Object uchun shablon
+//constructor() --- Obyekt yaratilganda avtomatik chaqiriladi
+//this ------------ Klassdan yaratilgan obyektni bildiradi
+//extends --------- Meros olish uchun
+//super() --------- Ota class ning constructor/metodini chaqiradi
+//static ---------- Class ga tegishli metod yoki property
+//#privateField --- Yashirin property
+//get/set --------- O'qish yozishni boshqaruvchi metodlar
