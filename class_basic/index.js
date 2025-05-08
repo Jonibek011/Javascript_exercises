@@ -195,4 +195,28 @@ class BankAccount {
 const acc = new BankAccount();
 acc.deposit(1000);
 
-console.log(acc.getBalance()); // 1000
+// console.log(acc.getBalance()); // 1000
+// console.log(acc.#balance); ❌ Xatolik beradi (yashirin)
+
+// Getter va Setterlar
+//bu metodlar orqali xususiyatlarni o'qish yoki o'zgartirishni nazorat qilish mumkin
+
+class User1 {
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name.toUpperCase();
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+}
+
+const you = new User1("Ali");
+console.log(you.name); //ALI
+
+you.name = "vali";
+console.log(you.name); //VALI
