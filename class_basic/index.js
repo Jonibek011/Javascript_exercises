@@ -152,3 +152,16 @@ class Animal {
 
 const dog = new Animal("It");
 // dog.speak() // It ovoz chiqaryapti
+
+//ota classdan metod meros olish
+
+//Class expression
+//Class ni let yoki const bilan o'zgaruchiga biriktirish mumkin
+const User = class {
+  constructor(name) {
+    this.name = name;
+  }
+};
+
+const user1 = new User("Ali");
+console.log(user1.name); //Ali
