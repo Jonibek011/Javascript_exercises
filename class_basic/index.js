@@ -120,4 +120,35 @@ const talaba = new Talaba(
   "IT"
 );
 
-talaba.describe();
+// talaba.describe();
+
+//this kalit so'zi
+// this - bu klassdan yaratilgan obyektning o'zini bildiradi
+
+class Book {
+  constructor(title) {
+    this.title = title;
+  }
+
+  showTitle() {
+    console.log(this.title);
+  }
+}
+
+const b = new Book("Javasctipt");
+// b.showTitle() //Javascript
+
+// Metodlar
+//Class ichidagi funksiyalarni oddiy yozamiz (function kalit so'zisiz)
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} ovoz chiqaryapti`);
+  }
+}
+
+const dog = new Animal("It");
+// dog.speak() // It ovoz chiqaryapti
