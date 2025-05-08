@@ -220,3 +220,25 @@ console.log(you.name); //ALI
 
 you.name = "vali";
 console.log(you.name); //VALI
+
+//Class ichida boshqa klass dan foydalanish
+
+class Engine {
+  start() {
+    console.log("Engine ishladi");
+  }
+}
+
+class Car {
+  constructor() {
+    this.engine = new Engine();
+  }
+
+  drive() {
+    this.engine.start();
+    console.log("Mashina yurdi");
+  }
+}
+
+const car = new Car();
+car.drive(); // Engine ishlar //Mashina yurdi
