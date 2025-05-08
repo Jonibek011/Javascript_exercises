@@ -164,4 +164,35 @@ const User = class {
 };
 
 const user1 = new User("Ali");
-console.log(user1.name); //Ali
+// console.log(user1.name); //Ali
+
+//Static metodlar va xususiyatlar
+//static bilan yozilgan metodlar obyectga emas, classning o'ziga tegishli bo'ladi
+
+class MahtHelper {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+console.log(MahtHelper.add(2, 3)); // 5
+
+//yani metod static kalit so'zi bilan chaqirilsa, u parametrlarni o'zi oladi va classning o'ziga tegishli metod bo'ladi
+
+//Private (yashirin ) xususiyatlar va metodlar # bilan
+class BankAccount {
+  #balance = 0;
+
+  deposit(amount) {
+    this.#balance += amount;
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+const acc = new BankAccount();
+acc.deposit(1000);
+
+console.log(acc.getBalance()); // 1000
