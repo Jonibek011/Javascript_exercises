@@ -1,17 +1,17 @@
 //Class - bu obyektlar yaratish uchun shablon. U orqali bir xil husuusiyat va metodlarga ega obyektlar yartamiz
 
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
 
-  fullInfo() {
-    console.log(`my name is ${this.name} and I'm ${this.age} years old`);
-  }
-}
+//   fullInfo() {
+//     console.log(`my name is ${this.name} and I'm ${this.age} years old`);
+//   }
+// }
 
-const user = new Person("Jonibek", 28);
+// const user = new Person("Jonibek", 28);
 
 // console.log(user); //Person { name: 'Jonibek', age: 28 }
 // user.fullInfo(); //my name is Jonibek and I'm 28 years old
@@ -272,3 +272,79 @@ car.drive(); // Engine ishlar //Mashina yurdi
 //static ---------- Class ga tegishli metod yoki property
 //#privateField --- Yashirin property
 //get/set --------- O'qish yozishni boshqaruvchi metodlar
+
+//========= Amaliy mashqlar ===============================================
+// Vazifa:
+// Person nomli class yarating. Unda greet() metodi bo‘lsin: console.log("Salom! Men oddiy insonman").
+// Student nomli class yarating va Person dan extends qilsin.
+// Student ichida greet() metodini yozing va super.greet() dan foydalanib, yana quyidagini yozing: console.log("Men talabaman").
+// class Person {
+//   greet() {
+//     console.log("Salom! Men oddiy insonman");
+//   }
+// }
+
+// class Student extends Person {
+//   greet() {
+//     super.greet();
+//     console.log("Men talabaman");
+//   }
+// }
+
+// const student = new Student();
+// console.log(student.greet());
+
+// Rectangle nomli class yarating, unda area() metodi bo‘lsin: return this.width * this.height.
+
+// Square nomli class yarating va Rectangledan meros olsin.
+
+// Square ichida area() metodini qayta aniqlang va super.area()ni ikki barobar qiling (* 2).
+
+// class Rectangle {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+
+//   area() {
+//     return this.height * this.width;
+//   }
+// }
+
+// class Square extends Rectangle {
+//   constructor(size) {
+//     super(size, size);
+//   }
+//   area() {
+//     const result = super.area();
+//     console.log(result);
+//     return result * 2;
+//   }
+// }
+
+// const square = new Square(4);
+// console.log(square.area());
+
+// class Employee {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   gitInfo() {
+//     console.log("Ishchi: " + this.name);
+//   }
+// }
+
+// class Manager extends Employee {
+//   constructor(name) {
+//     super(name);
+//   }
+
+//   getinfo() {
+//     super.gitInfo();
+//     console.log("Lavozimi: Manager");
+//   }
+// }
+
+// const ishchi = new Manager("Raim");
+// ishchi.getinfo();
