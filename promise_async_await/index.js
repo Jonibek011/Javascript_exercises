@@ -19,3 +19,25 @@
 // promise
 //   .then((result) => console.log(result))
 //   .catch((error) => console.log(error));
+
+//then() va catch() metodlari:
+//.then() - Promise muvaffaqiyatli bajarilganda ishlaydi ba qaytarilgan qiymatni qabul qiladi
+//.catch() - Promise xato bilan tugaganida ishlaydi va xatoni qabul qiladi
+
+// Promise zanjiri
+//bir nechta asinxron operatsiyalarni ketma ket bajarish uchun promislarni zanjir qilish mumkin
+
+// new Promise((resolve, reject) => {
+//     resolve("Birinchi");
+//   })
+//     .then(result => {
+//       console.log(result); // Birinchi
+//       return "Ikkinchi";
+//     })
+//     .then(result => {
+//       console.log(result); // Ikkinchi
+//       return "Uchinchi";
+//     })
+//     .then(result => {
+//       console.log(result); // Uchinchi
+//     });
