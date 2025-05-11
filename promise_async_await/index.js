@@ -41,3 +41,14 @@
 //     .then(result => {
 //       console.log(result); // Uchinchi
 //     });
+
+//========== Promise.all() ===========================
+//Promise.all() -- bir nechta promiselarni birgalikda bajaradi va barchasi muvaffaqiyatli bajarilandan so'ng bitta natija qaytaradi. Agar ulardan bittasi ham xato bersa, butun promise.all reject bo'ladi
+
+// let p1 = new Promise(resolve => setTimeout(() => resolve("1-son"), 1000));
+// let p2 = new Promise(resolve => setTimeout(() => resolve("2-son"), 2000));
+// let p3 = new Promise(resolve => setTimeout(() => resolve("3-son"), 1500));
+
+Promise.all([p1, p2, p3])
+  .then((result) => console.log("Hammasi tugadi", result))
+  .catch((err) => console.log("Xatolik", err));
