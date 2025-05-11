@@ -49,6 +49,13 @@
 // let p2 = new Promise(resolve => setTimeout(() => resolve("2-son"), 2000));
 // let p3 = new Promise(resolve => setTimeout(() => resolve("3-son"), 1500));
 
-Promise.all([p1, p2, p3])
-  .then((result) => console.log("Hammasi tugadi", result))
-  .catch((err) => console.log("Xatolik", err));
+// Promise.all([p1, p2, p3])
+//   .then((result) => console.log("Hammasi tugadi", result))
+//   .catch((err) => console.log("Xatolik", err));
+
+//=========== Promise race() ================================
+//Promise.race() - ro'yxatdagi birinchi bajarilganini (yoki rad etilganini) natija sifatida qaytaradi. Qolganlarini kutmaydi
+
+// Promise.race([promise1, promise2, promise3])
+//   .then((result) => console.log(result))
+//   .catch((err) => console.log(err));
