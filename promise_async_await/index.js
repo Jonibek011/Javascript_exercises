@@ -59,3 +59,18 @@
 // Promise.race([promise1, promise2, promise3])
 //   .then((result) => console.log(result))
 //   .catch((err) => console.log(err));
+
+const getData = () => {
+  const request = new XMLHttpRequest();
+  request.open("GET", "https://dummyjson.com/products");
+  request.send();
+
+  if (request.status === 200) {
+    let data = JSON.parse(request.responseText);
+    console.log(data);
+  } else {
+    console.log("something is wrong");
+  }
+};
+
+getData();
