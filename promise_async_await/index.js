@@ -60,17 +60,25 @@
 //   .then((result) => console.log(result))
 //   .catch((err) => console.log(err));
 
-const getData = () => {
+const getData = (callback) => {
   const request = new XMLHttpRequest();
-  request.open("GET", "https://dummyjson.com/products");
+  request.open("GET", "todos.json");
   request.send();
 
-  if (request.status === 200) {
-    let data = JSON.parse(request.responseText);
-    console.log(data);
-  } else {
-    console.log("something is wrong");
-  }
+  request.addEventListener("readystatechange", () => {
+    if (request.status === 200 && request.readyState === 4) {
+      const data = JSON.parse(request.responseText);
+      callback(undefined, data);
+    } else {
+      callback("Something went wrong", undefined);
+    }
+  });
 };
 
-getData();
+getData((err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
