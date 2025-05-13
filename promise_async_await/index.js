@@ -100,5 +100,12 @@ const getData = (source) => {
 };
 
 getData("./todos.json")
-  .then((data) => console.log(data))
+  .then((data) => {
+    console.log(data);
+    return getData("./todos1.json");
+    //return "Hammasi yaxshi"
+  })
+  .then((data) => console.log(data)) //Hammasi yaxshi
   .catch((err) => console.log(err));
+
+//birinchi .then dan return qilingan malumot ikkinchi .then ga kelib tushadi
