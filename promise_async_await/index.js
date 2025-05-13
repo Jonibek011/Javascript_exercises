@@ -60,25 +60,45 @@
 //   .then((result) => console.log(result))
 //   .catch((err) => console.log(err));
 
-const getData = (callback) => {
-  const request = new XMLHttpRequest();
-  request.open("GET", "todos.json");
-  request.send();
+// const getData = (callback) => {
+//   const request = new XMLHttpRequest();
+//   request.open("GET", "todos.json");
+//   request.send();
 
-  request.addEventListener("readystatechange", () => {
-    if (request.status === 200 && request.readyState === 4) {
-      const data = JSON.parse(request.responseText);
-      callback(undefined, data);
-    } else {
-      callback("Something went wrong", undefined);
-    }
+//   request.addEventListener("readystatechange", () => {
+//     if (request.status === 200 && request.readyState === 4) {
+//       const data = JSON.parse(request.responseText);
+//       callback(undefined, data);
+//     } else {
+//       callback("Something went wrong", undefined);
+//     }
+//   });
+// };
+
+// getData((err, data) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// });
+
+const getData = (source) => {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+    request.open("GET", source);
+    request.send();
+    request.addEventListener("readystatechange", () => {
+      if (request.status === 200 && request.readyState === 4) {
+        const data = JSON.parse(request.responseText);
+        resolve(data);
+      } else if (request.readyState === 4) {
+        reject("Malumot olishda xatolik yuz berdi");
+      }
+    });
   });
 };
 
-getData((err, data) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(data);
-  }
-});
+getData("./todos.json")
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
