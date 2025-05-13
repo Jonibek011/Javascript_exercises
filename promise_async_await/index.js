@@ -115,12 +115,28 @@
 //Promise.all() dan farqai agar promise larning bir nechtasi xato javob qaytarsa va
 //bir nechtasiga malumot kelsa ularni har birini alohida qaytaradi
 
-Promise.allSettled([Promise1, Promise2]).then((results) => {
-  results.forEach((result) => {
-    if (result.status === "fulfilled") {
-      console.log("Muvaffaqiyatli: ", result.value);
-    } else {
-      console.log("xato", result.reason);
-    }
+// Promise.allSettled([Promise1, Promise2]).then((results) => {
+//   results.forEach((result) => {
+//     if (result.status === "fulfilled") {
+//       console.log("Muvaffaqiyatli: ", result.value);
+//     } else {
+//       console.log("xato", result.reason);
+//     }
+//   });
+// });
+
+//=================================================================
+// Promise.any() - birinchi muvaqqayatli natijani oladi
+// bu promise.race ni optimallashtirilgan varyanti
+//promise.race birinchi natijani qaytaradi agar u xatolik bo'lsa ham
+//promise.any esa birinchi ijobiy natijani qaytaradi
+
+Promise.any([promise1, promise2, promise3])
+  .then((result) => {
+    console.log("✅ Muvaffaqiyatli:", result);
+  })
+  .catch((error) => {
+    console.error("❌ Hammasi xato:", error);
   });
-});
+
+//Promise.resolve(value) bu new Promise(resolve = > resolve(value) ) bilan bir xil
