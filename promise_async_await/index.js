@@ -83,29 +83,44 @@
 //   }
 // });
 
-const getData = (source) => {
-  return new Promise((resolve, reject) => {
-    const request = new XMLHttpRequest();
-    request.open("GET", source);
-    request.send();
-    request.addEventListener("readystatechange", () => {
-      if (request.status === 200 && request.readyState === 4) {
-        const data = JSON.parse(request.responseText);
-        resolve(data);
-      } else if (request.readyState === 4) {
-        reject("Malumot olishda xatolik yuz berdi");
-      }
-    });
-  });
-};
+// const getData = (source) => {
+//   return new Promise((resolve, reject) => {
+//     const request = new XMLHttpRequest();
+//     request.open("GET", source);
+//     request.send();
+//     request.addEventListener("readystatechange", () => {
+//       if (request.status === 200 && request.readyState === 4) {
+//         const data = JSON.parse(request.responseText);
+//         resolve(data);
+//       } else if (request.readyState === 4) {
+//         reject("Malumot olishda xatolik yuz berdi");
+//       }
+//     });
+//   });
+// };
 
-getData("./todos.json")
-  .then((data) => {
-    console.log(data);
-    return getData("./todos1.json");
-    //return "Hammasi yaxshi"
-  })
-  .then((data) => console.log(data)) //Hammasi yaxshi
-  .catch((err) => console.log(err));
+// getData("./todos.json")
+//   .then((data) => {
+//     console.log(data);
+//     return getData("./todos1.json");
+//     //return "Hammasi yaxshi"
+//   })
+//   .then((data) => console.log(data)) //Hammasi yaxshi
+//   .catch((err) => console.log(err));
 
 //birinchi .then dan return qilingan malumot ikkinchi .then ga kelib tushadi
+
+//================================================================
+//Promise.allSettled() - hammasi tugaguncha kutadi, xato bo'lsa ham
+//Promise.all() dan farqai agar promise larning bir nechtasi xato javob qaytarsa va
+//bir nechtasiga malumot kelsa ularni har birini alohida qaytaradi
+
+Promise.allSettled([Promise1, Promise2]).then((results) => {
+  results.forEach((result) => {
+    if (result.status === "fulfilled") {
+      console.log("Muvaffaqiyatli: ", result.value);
+    } else {
+      console.log("xato", result.reason);
+    }
+  });
+});
