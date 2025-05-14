@@ -140,3 +140,30 @@ Promise.any([promise1, promise2, promise3])
   });
 
 //Promise.resolve(value) bu new Promise(resolve = > resolve(value) ) bilan bir xil
+
+// Finally
+
+//--finally() -- natijadan qatiy nazar ishlaydi
+
+//finally() metodi Promise muvaffaqiyatli bo'ladimi yoki xato qiladimi - baribir ishlaydi
+
+// promise
+//   .then(result => { ... })     // resolve bo‘lsa
+//   .catch(error => { ... })     // reject bo‘lsa
+//   .finally(() => { ... });     // har doim ishga tushadi
+
+//🎯 Maqsadi:
+//Tozalash ishlari uchun (loading tugatish, spinnerni o'chirish, resurslarni yopish)
+
+//🔍 Muhim eslatmalar:
+//Agar promise tugagach, spinnerni o'chirish yoki foydalanuvchiga xabar chiqarish kerak bo'lsa -finally() eng yaxshi joy
+//finally() yangi qiymat uzatmaydi, yani .then() yoki catch() dagi qiymatni o'zgartirmaydi
+//finally da yozilgan coddan qiymat qaytarilsa ham u oldingi qiymatni o'zgartirmaydi.
+//finally faqat promise zanjiri oxirida emas, har qanday joyda ishlatilishi mumkin
+
+// button.disabled = true;
+// fetch(url)
+//   ...
+//   .finally(() => {
+//     button.disabled = false;
+//   });
