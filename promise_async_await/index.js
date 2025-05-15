@@ -167,3 +167,38 @@ Promise.any([promise1, promise2, promise3])
 //   .finally(() => {
 //     button.disabled = false;
 //   });
+
+//========= async await ===================================
+
+// async await - bu promise ga asoslangan, ammo o'qilishi yanada osonlashgan sintaksis
+//async - bu funksiya avtomatik promise qaytaradigan deb belgilaydi
+
+async function foo() {
+  return 1;
+}
+
+//yuqoridagi funksiya aslida quyidagiga teng
+function foo() {
+  return Promise.resolve(1);
+}
+
+//Misol
+async function sayHello() {
+  return "Salom";
+}
+
+sayHello().then(alert); //"Salom"
+
+//Await nima - faqat async funksiyalar ichida ishlaydi va u berilgan promise tugaguncha kutadi. tugagach natijani qaytaradi
+
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function process() {
+  console.log("boshlanish");
+  await timeout(2000); // 2 soniya kutadi
+  console.log("2 soniyadan so'ng");
+}
+
+process();
