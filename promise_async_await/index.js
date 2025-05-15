@@ -243,3 +243,18 @@ async function loadAll() {
   let data = await Promise.all(results.map((result) => result.json()));
   console.log(data);
 }
+
+//Async await bilan rekursiya, loop va boshqalar
+//Loop ichida await ishlatish
+async function loadUsers() {
+  let ids = [1, 2, 3];
+
+  for (let id of ids) {
+    let request = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+    let data = await request.json();
+    console.log(data.name);
+  }
+}
+//bu ketma ket bajariladi, parallel uchun yuqoridagi Promise.all usuli afzal
