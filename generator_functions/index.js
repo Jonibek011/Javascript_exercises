@@ -22,3 +22,22 @@ console.log(gen.next());
 //yani funksiya yield operatori bilan 3 qismga bo'lib yozilsa
 // funksiya uch marta chaqirilsa har bir yieldga yozilgan qism obyect sifatida qaytadi
 //to'rtinchi marta chaqirilganda esa undefined qaytadi.
+
+//yield nima?
+//yield -bu generator funksiyasi ichida ishlatiladigan maxsus operator bo'lib, u qiymatni tashqariga uzatadi va bajarilishni to'xtatadi
+function* fruitGenerator() {
+  yield "Apple";
+  yield "Banana";
+  yield "Cherry";
+}
+
+const fruits = fruitGenerator();
+console.log(fruits.next()); //{ value: 'Apple', done: false }
+console.log(fruits.next().value); //Apple
+console.log(fruits.next().value); // Banana
+
+//Done nima?
+//har bir nex() chaqirig'i quyidagi objectni qaytaradi:
+// {value:..., done: true/false}
+// value - yield chaqirilgan qiymat
+// done - generator tugaganmi yoki yo'qmi (true bolsa -generator oxiriga yetgan)
