@@ -173,32 +173,73 @@ Promise.any([promise1, promise2, promise3])
 // async await - bu promise ga asoslangan, ammo o'qilishi yanada osonlashgan sintaksis
 //async - bu funksiya avtomatik promise qaytaradigan deb belgilaydi
 
-async function foo() {
-  return 1;
-}
+// async function foo() {
+//   return 1;
+// }
 
 //yuqoridagi funksiya aslida quyidagiga teng
-function foo() {
-  return Promise.resolve(1);
-}
+// function foo() {
+//   return Promise.resolve(1);
+// }
 
-//Misol
-async function sayHello() {
-  return "Salom";
-}
+// //Misol
+// async function sayHello() {
+//   return "Salom";
+// }
 
-sayHello().then(alert); //"Salom"
+// sayHello().then(alert); //"Salom"
 
 //Await nima - faqat async funksiyalar ichida ishlaydi va u berilgan promise tugaguncha kutadi. tugagach natijani qaytaradi
 
-function timeout(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+// function timeout(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
+// async function process() {
+//   console.log("boshlanish");
+//   await timeout(2000); // 2 soniya kutadi
+//   console.log("2 soniyadan so'ng");
+// }
+
+// process();
+
+//real hayotiy masala
+async function getUser() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+  let data = await response.json();
+  console.log(data);
 }
 
-async function process() {
-  console.log("boshlanish");
-  await timeout(2000); // 2 soniya kutadi
-  console.log("2 soniyadan so'ng");
+//Bu yerda nima bo'lyapti
+//1) fetch orqali malumot so'rayapmiz - bu promise qaytaradi
+//2)await fetch() - fetch tugashini kutamiz
+//3) response.json() ham promise - uni ham await qilamiz
+//4) natijani console ga chiqaramiz
+
+//Await faqat promise bilan ishlaydi, agar unga oddiy qiymat berilsa, u darhol o'sha qiymatni qaytaradi
+
+// Try catch bilan xatoni ushlash
+//agar await ishlatilgan Promise da xato yuz bersa, bu xatoni try catch orqali ushlash mumkin
+async function getuser() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-process();
+//Parallel bajarish uchun Promise.all bilan birga
+//Agar bir nechta await ketma-ket ishlatilsa, ular navbatma-navbat bajariladi. Tezroq natija olish uchun Promise.all() ishlatamiz
+
+async function loadAll() {
+  let urls = [
+    "https://jsonplaceholder.typicode.com/users/1",
+    "https://jsonplaceholder.typicode.com/users/2",
+  ];
+
+  let results = await Promise.all(urls.map((url) => fetch(url)));
+  let data = await Promise.all(results.map((result) => result.json()));
+  console.log(data);
+}
