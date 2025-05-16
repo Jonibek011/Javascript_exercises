@@ -116,17 +116,25 @@ console.log(counter.next().value); // 1
 //yield* operatori
 //agar bir generator ichida boshqasini chaqirmoqchi bo'lsangiz yield* ishlatiladi
 
-function* subGen() {
-  yield "a";
-  yield "b";
-}
+// function* subGen() {
+//   yield "a";
+//   yield "b";
+// }
 
-function* mainGen() {
-  yield 1;
-  yield* subGen();
-  yield 2;
-}
+// function* mainGen() {
+//   yield 1;
+//   yield* subGen();
+//   yield 2;
+// }
 
-for (val of mainGen) {
-  console.log(val); //1,a,b,2
-}
+// for (val of mainGen) {
+//   console.log(val); //1,a,b,2
+// }
+
+//Xulosa
+//function* -- generator yaratish uchun kerak
+// yield -- Qiymatni chiqaradi va bajarilishni to'xtatadi
+// next() -- Generatorni keyingi yieldgacha bajaradi
+//return -- Generatorni tugatadi
+//for...of -- Generatorni aylanish uchun ishlatiladi
+//yield* -- Boshqa generatorni ichiga qo'shadi
