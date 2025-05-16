@@ -29,3 +29,32 @@
 
 // console.log(PI);
 // console.log(add(2, 3));
+
+// - default import
+
+import sayHello from "./utils.js";
+sayHello("Ali");
+
+// - Barchasini import qilish
+import * as math from "./math.js";
+
+//4) - Muhim qoidalar
+// - import/export faqat modul fayllarida ishlaydi (type = "module" kerak)
+// - import/export doim faylning yuqorisida bo'lishi kerak
+// - Modul faqat bir marta bajariladi, keyingi importlar cashe dan olinadi
+// - export default modulda faqat bitta bo'lishi mumkin
+// Fayl nomlarida .js kengaytmasi yozish kerak (yoki .mjs agar kerak bo'lsa)
+
+//5) Brouserda modullar
+// HTML faylda sctipt tegi bilan modulni chaqirish
+<sctipt type="module" src="main.js"></sctipt>;
+
+//Modullarda defer avtomatik bo'ladi - yani fayl DOM yuklangandan keyin bajariladi
+
+// 6) Dinamik import
+//agar modulni faqat kerak bo'lganda yuklamoqchi bo'lsangiz
+
+button.addEventListener("click", async () => {
+  const module = await import("./math.js");
+  console.log(module.add(3, 4));
+});
