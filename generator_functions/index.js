@@ -89,3 +89,44 @@ console.log(g.next()); //{ value: undefined, done: true }
 //etiborli tomoni agar return berilmasa oxirgi yield ni bajarganda ham done false bo'ladi
 //oxirgi yieldni bajargandan keyin yana chaqirilsa keyin done true bo'ladi
 // return da esa return qilingan qiymatni o'zida done true bo'larkan
+
+//Real xayotda qanday ishlatiladi
+// >> Infinite generatorlar:
+function* infiniteCounter() {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
+
+const counter = infiniteCounter();
+console.log(counter.next().value); // 0
+console.log(counter.next().value); // 1
+
+//Fayllarni qadamba qadam o'qish
+//Ssync/await bilan parallel kodlar
+// Pauzali animatsiyalar
+
+//Generator va Iterator o'rtasidagi farqlar
+// Gnerator                                                 Iterator
+//function* orqali yaratiladi ----------------------------next() metodiga egan har qanday oobyekt
+//Oson yaratiladi(yield yordamida) ----------------------Qo'lda next() ni yozish kerak
+//To'xtatish va davom ettirish imkoniyati bor -----------oddiy ketma ketlikka asoslanadi
+
+//yield* operatori
+//agar bir generator ichida boshqasini chaqirmoqchi bo'lsangiz yield* ishlatiladi
+
+function* subGen() {
+  yield "a";
+  yield "b";
+}
+
+function* mainGen() {
+  yield 1;
+  yield* subGen();
+  yield 2;
+}
+
+for (val of mainGen) {
+  console.log(val); //1,a,b,2
+}
