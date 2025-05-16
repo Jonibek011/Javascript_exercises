@@ -54,3 +54,21 @@ for (count of countToThree()) {
 }
 
 //demak generator funksiyalarni for of bilan loop qilganimizda uni next() metodini chaqirishimiz shart emas
+
+//Generator funksiyasi ichida yield faqat qiymatni tashqariga chiqarmaydi
+//balki tashqaridan qiymat ham qabul qilishi mumkin
+
+// function* maGen(){
+//   const x = yield 'ber biror son'; //tashqaridan bu yerga qiymat keladi
+//   console.log("Qabul qilingan qiymat: ", x)
+// }
+//bu yerda yield biror o'zgaruvchiga tenglansa python dagi input kabi ishlarkan va next() ga kiritilgan qiymat ana shu o'zgaruvchiga teng bo'larkan
+//next() ga qiymat uzatish mumkin. buu qiymat yield ifodasi bo'lib, u avvalgi yield ni bajarib, keyingi qiymatga uzatiladi
+function* quiz() {
+  const answer = yield "2+2=?";
+  console.log("User answered: ", answer);
+}
+
+const q = quiz();
+console.log(q.next().value); // '2+2=?'
+q.next(4); //user answered: 4
