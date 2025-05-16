@@ -64,11 +64,28 @@ for (count of countToThree()) {
 // }
 //bu yerda yield biror o'zgaruvchiga tenglansa python dagi input kabi ishlarkan va next() ga kiritilgan qiymat ana shu o'zgaruvchiga teng bo'larkan
 //next() ga qiymat uzatish mumkin. buu qiymat yield ifodasi bo'lib, u avvalgi yield ni bajarib, keyingi qiymatga uzatiladi
-function* quiz() {
-  const answer = yield "2+2=?";
-  console.log("User answered: ", answer);
+// function* quiz() {
+//   const answer = yield "2+2=?";
+//   console.log("User answered: ", answer);
+// }
+
+// const q = quiz();
+// console.log(q.next().value); // '2+2=?'
+// q.next(4); //user answered: 4
+
+// Generator ichida return
+//Agar siz generator ichida return qilsangiz, u generatorni to'xtatadi
+function* myGen() {
+  yield 1;
+  return 2; // generator tugaydi
+  yield 3; //bu ishlamaydi
 }
 
-const q = quiz();
-console.log(q.next().value); // '2+2=?'
-q.next(4); //user answered: 4
+const g = myGen();
+console.log(g.next()); //{ value: 1, done: false }
+console.log(g.next()); //{ value: 2, done: true }
+console.log(g.next()); //{ value: undefined, done: true }
+
+//etiborli tomoni agar return berilmasa oxirgi yield ni bajarganda ham done false bo'ladi
+//oxirgi yieldni bajargandan keyin yana chaqirilsa keyin done true bo'ladi
+// return da esa return qilingan qiymatni o'zida done true bo'larkan
