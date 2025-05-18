@@ -152,3 +152,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(querySelector(".list"));
 });
+
+// 8. Dataset va data-* attribute lari
+//data-* attributi nima - HTML da maxsus attribute lar yaratmoqchi bo'lsangiz, data- bilan
+//boshlangan attribute lardan foydalanasiz. Ular foydalanuvchiga ko'rinmaydi
+//lekin javascript orqali qulay tarzda o'qish va ishlatish mumkin
+
+//Foydalanish
+{
+  /* <div id="product" data-id="123" data-name="MacBook" data-price="2499"></div> */
+}
+
+//Bu yerda:
+//data-id="123" - foydalanuvchi identifikatori
+//data-name="MacBook" - maxsulot nomi
+//data-price="2499" - maxsulot narxi
+
+//dataset orqali o'qish
+// HTML code ga kiritilgan data-* attribute larni javascriptda dataset metodi orqali o'qish mumkin
+const element = document.getElementById("product");
+console.log(element.dataset.id);
+console.log(element.dataset.name);
+console.log(element.dataset.price);
+
+//agar data- dan keyingi qism chiziqcha bilan yozilgan bo'lsa dataset ga u camel-case bo'lib keladi
+/* <div data-user-id="123"></div> */
+console.log(el.dataset.userId);
+
+//dataset orqali data- attributiga qiymat ham uzatish mumkin
+el.dataset.price = "1999"; // <div data-price="1999">
+
+// Dataset bilan ishlashdagi foydali imkoniyatlar:
+//dataset orqali elementdagi barcha data- attributlarini ko'rish mumkin
+console.log(el.dataset); // Output: { id: "123", name: "MacBook", price: "2499" }
+
+//Amaliy qo'llanish xolatlari
+//1.Event delegation (malumot tashish uchun)
+{
+  /* <ul id="menu">
+  <li data-action="sava">Saqlash</li>
+  <li data-action="load">Yuklash</li>
+</ul> */
+}
+
+document.getElementById("menu").onclick = function (e) {
+  if (e.target.dataset.action) {
+    console.log("Action: ".e.target.dataset.action);
+  }
+};
+
+//2.Dinamik komponentlar yaratishda
+{
+  /* <button data-id="42" onclick="handleClick(this)">Tanla</button> */
+}
+function handleClick(btn) {
+  const userId = btn.dataset.id;
+  console.log("Foydalanuvchi ID: ", userId);
+}
+
+//Ehtiyot bo'lish kerak bo'lgan xolatlar
+// 1.Faqat string malumotlar saqlanadi data-price="2999". agar kerak bo'lsa Number() bilan aylantirish mumkin
+//2.data- atribut nomlarida faqat ichkina xarflar (a-z), raqamlar(0-9), hamda - bo'lishi kerak
+//3.HTML da data-user-id="123"  yozilgan bo'lsa dataset bilan o'qilganda el.dataset.userId deb yoziladi (yani camelCase)
+// lekin dataset orqali malumot o'rnatilganda el.dataset.userId = "123" bo'lganda HTML da data-userid="123" bo'ladi (camelCase emas)
