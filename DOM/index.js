@@ -5,36 +5,150 @@
 //DOM ning asosiy tushunchalari
 //1.document object -- domdagi eng yuqori darajadagi object
 //document orqali sahifadagi barcha elementlarga kirish mumkin
-console.log(document); // butun HTML faylni beradi
+// console.log(document); // butun HTML faylni beradi
 
 //2.Elementlarni tanlash(Selecting elements)
 // getElementById - elementni id orqali oladi
-const title = document.getElementById("title");
-//getElementsByClassName - elementni className orqali tanlab oladi
-const items = document.getElementsByClassName("item");
-//getElementByTagName - tag name orqali tanlab oladi
-const paragraf = document.getElementsByTagName("p");
-//querySelector(birinchi mos kelganini oladi)
-const firstItem = document.querySelector(".item");
-//querySelectorAll (hamma mos kelganlarini oladi)
-const allItems = document.querySelectorAll(".item");
+// const title = document.getElementById("title");
+// //getElementsByClassName - elementni className orqali tanlab oladi
+// const items = document.getElementsByClassName("item");
+// //getElementByTagName - tag name orqali tanlab oladi
+// const paragraf = document.getElementsByTagName("p");
+// //querySelector(birinchi mos kelganini oladi)
+// const firstItem = document.querySelector(".item");
+// //querySelectorAll (hamma mos kelganlarini oladi)
+// const allItems = document.querySelectorAll(".item");
 
-//3. Element ustida amallar (DOM maipulation)
-// => text yoki html ni o'zgartirish
+// //3. Element ustida amallar (DOM maipulation)
+// // => text yoki html ni o'zgartirish
 
-title.textContent = "Yangi sarlavha"; //Faqat matn
-title.innerHTML = "<i>Yangi sarlavha</i>"; //HTML bilan
+// title.textContent = "Yangi sarlavha"; //Faqat matn
+// title.innerHTML = "<i>Yangi sarlavha</i>"; //HTML bilan
 
-//=> yangi element yaratish va qo'shish
-const newP = document.createElement("p");
-newP.textContent = "Yangi paragraf";
-document.body.appendChild(newP);
+// //=> yangi element yaratish va qo'shish
+// const newP = document.createElement("p");
+// newP.textContent = "Yangi paragraf";
+// document.body.appendChild(newP);
 
-//=>elementni o'chirish
-const el = document.getElementById("title");
-el.remove(); // HTML dan olib tashlaydi
+// //=>elementni o'chirish
+// const el = document.getElementById("title");
+// el.remove(); // HTML dan olib tashlaydi
 
-//=> class qo'shish va olib tashlash
-el.classList.add("yangi-class");
-el.classList.remove("eski-class");
-el.classList.toggle("theme");
+// //=> class qo'shish va olib tashlash
+// el.classList.add("yangi-class");
+// el.classList.remove("eski-class");
+// el.classList.toggle("theme");
+
+//4.DOM hodisalari (Events)
+//Dom xodisalari orqali foydalanuvchi xarakatlariga javob berish mumkin
+
+//=> addEventListener bilan xodisa ulash
+// const btn = document.getElementById("myBtn");
+
+// btn.addEventListener("click", () => {
+//   alert("Tugma bosildi");
+// });
+
+//5.Element attributlari bilan ishlash
+
+// => olish, o'zgartirish
+// const link = document.querySelector("a");
+// console.log(link.getAttribute("href")); // https://...
+// link.setAttribute("href", "https://example.com"); //o'zgartirish
+
+//=============== ADVANCED DOM =====================================
+//DOM dagi har bir element Node hisoblanadi va ularning turi bo'ladi (Element, text, comment)
+// const ell = document.getElementById('title')
+// console.log(ell.nodeType) // 1 => element
+
+//nodeType metodi orqali node ning turini bilish mumkin
+//agar u 1 qaytarsa node turi element node bo'ladi
+// 3 qaytarsa Text node
+// 8 qaytarsa comment node bo'ladi
+
+//2. ChildNodes vs children
+// const el = document.getElementById("title");
+// console.log(el.childNodes);
+// console.log(el.children);
+
+//childNodes barcha node elementlarini qaytaradi (yani text node, element node va comment node)
+//children esa faqat elementlarni qaytaradi
+
+// 3.firstChild, firstElementChild, lastChild, lastElementChild, nexSibling, nextElementSibling, previousSibling, previousElementSibling
+const el = document.getElementById("example");
+// console.log(el.firstChild); // birinchi node (xatto text bo'lsa ham)
+// console.log(el.firstElementChild); // birinchi element node ni qaytaradi
+// console.log(el.lastElementChild);
+// console.log(el.nextSibling); // keyingi node
+// console.log(el.nextElementSibling); // keyingi element
+
+// shu metodlar orqali ham domni manipulyatisiya qilish mumkin
+
+el.nextElementSibling.textContent = "Yangi content";
+// yoki qandaydir event sodir bo'lganda shu elementning qo'shni elementlarida
+//o'zgarish qilmoqchi bo'lsa qo'l keladi
+
+//4. closest (selector) metodi
+//bu metod orqali DOM daraxti bo'ylab yuqoriga ko'tarilib, mos selector topiladi
+// const button = document.querySelector("button");
+// const form = button.closest("form"); //eng yaqin <form/> ni topadi
+
+//5. matches(selector) metodi
+//Bu metod biror element berilgan selector ga mos keladimi yoqmi shuni tekshiradi
+// if (el.matches('.active')){
+//     el.classList.remove('.active')
+//     el.nextElementSibling.classList.add('.active')
+// }
+
+//6.inserAdjacentHTML() - bu usul DOM ga yangi elementlarni aniq positsiyaga joylashtirish uchun foydalidir
+el.insertAdjacentHTML("beforebegin", "<p>Before</p>"); // element boshlanishidan avva p tegini qo'shadi
+el.insertAdjacentHTML(
+  "afterbegin",
+  "<p>Element boshlangandan keyin contentidan oldin </p>"
+);
+el.insertAdjacentHTML(
+  "beforeend",
+  "<p>Element tugatilishidan oldini contentidan keyin  </p>"
+);
+el.insertAdjacentHTML(
+  "afterend",
+  "<p>Element  tugangandan keyin tashqariga </p>"
+);
+
+//Bundan tashqari insertAdjacentElement hamda insertAdjacentText metodlari ham mavjud
+//ular ham insertAdjacentHTML kabi ishlaydi lekin faqat DOM elementi va oddiy matn qo'shadi
+
+//insertAdjacentElement - bu metod HTML kodni qo'shmaydi u DOM elementini yani
+//createElement metodi orqali yaratilgan elementni qo'shadi
+
+//Misol:
+let p = document.createElement("p");
+p.textContent = "yangi p tegi yaratildi";
+
+el.insertAdjacentElement("beforeend", p);
+
+//insertAdjacentText - shunchaki oddiy text qo'shadi (text node)
+el.insertAdjacentText("afterbegin", "qo'shimcha matn qo'shildi");
+
+//7. DocumentFragment - performens uchun
+//DOM ga ko'p element qo'shish kerak bo'lsa har bir qo'shish qayta chizishga olib keladi
+//DocumentFragment yordamida bir marta chizishga olib kelish mumkin
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fragment = document.createDocumentFragment();
+
+  for (let i = 0; i < 10; i++) {
+    const li = document.createElement("li");
+    li.textContent = `item ${i}`;
+    fragment.appendChild(li);
+  }
+
+  const list = document.querySelector(".list");
+  if (list) {
+    list.appendChild(fragment);
+  } else {
+    console.log("List topilmadi");
+  }
+
+  console.log(querySelector(".list"));
+});
