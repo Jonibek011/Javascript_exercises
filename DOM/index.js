@@ -127,7 +127,7 @@
 
 // el.insertAdjacentElement("beforeend", p);
 
-// //insertAdjacentText - shunchaki oddiy text qo'shadi (text node)
+//insertAdjacentText - shunchaki oddiy text qo'shadi (text node)
 // el.insertAdjacentText("afterbegin", "qo'shimcha matn qo'shildi");
 
 //7. DocumentFragment - performens uchun
