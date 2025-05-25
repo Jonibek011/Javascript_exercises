@@ -187,3 +187,24 @@ const newObj = Object.fromEntries(FormData.entries());
 //   error.textContent = "";
 //   alert("Forma yuborildi!");
 // });
+
+//Form malumotlarini jo'natish
+const formData = new FormData(form);
+fetch("/sumbit", {
+  method: "POST",
+  body: formData,
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+//Asynchron validatsiya
+
+input.addEventlistener("blur", () => {
+  fetch(`/check-username?username=${input.value}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.available) {
+        alert("Username band");
+      }
+    });
+});
