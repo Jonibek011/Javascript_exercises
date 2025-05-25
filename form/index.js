@@ -65,14 +65,77 @@
 //FormData API
 //yuborilayotgan form malumotlarini object sifatida olish
 
-const form = document.querySelector("form");
+// const form = document.querySelector("form");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const formData = new FormData(form);
 
-  const email = formData.get("email");
-  const password = formData.get("password");
+//   const email = formData.get("email");
+//   const password = formData.get("password");
 
-  console.log(email, password);
-});
+//   console.log(email, password);
+// });
+
+//formData metodlari
+//append() - formdata obyectiga yangi kalit qiymat juftligi qo'shadi,
+//agar kalit mavjud bo'lsa, eski qiymat o'zgarmaydi - yangi qiymat qo'shiladi
+// const fd = new FormData();
+// fd.append("name", "Ali");
+// fd.append("name", "Vali"); // bir xil kalit, lekin boshqa qiymat
+
+// console.log(fd.getAll("name")); // ['Ali', 'Vali']
+
+//set(name, value) - kalit mavjud bo'lsa, faqat birinchi qiymatni yangilaydi, qolganlarini o'chiradi,
+//kalit mavjud bo'lmasa yangisini qo'shadi
+
+// const fd = new FormData();
+// fd.append("name", "Ali");
+// fd.append("name", "Vali");
+
+// fd.set("name", "Jasur"); // endi faqat 'Jasur' qoladi
+
+// console.log(fd.getAll("name")); // ['Jasur']
+
+//get(name) - Berilgan kalit uchun birinchi qiymatni qaytaradi
+// const fd = new FormData();
+// fd.append("email", "test@example.com");
+
+// console.log(fd.get("email")); // test@example.com
+
+//getAll(name) -- kalit bir necha marta ishlatilgan bo'lsa barcha natijalarni massiv shaklida qaytaradi
+// const fd = new FormData();
+// fd.append("color", "red");
+// fd.append("color", "green");
+
+// console.log(fd.getAll("color")); // ['red', 'green']
+
+//has(name) - formData ichida kalit mavjudmi yo'qmi shuni qaytaradi
+// const fd = new FormData();
+// fd.append("username", "webuser");
+
+// console.log(fd.has("username")); // true
+// console.log(fd.has("password")); // false
+
+//delete(name) - berilgan kalit bo'yicha hamma qiymatlarni o'chiradi
+// const fd = new FormData();
+// fd.append("token", "123abc");
+// fd.delete("token");
+
+// console.log(fd.has("token")); // false
+
+//entries() - barcha kalit-qiymat juftliklarini iterator orqali aylantirishga imkon beradi
+// const fd = new FormData();
+// fd.append("name", "Ali");
+// fd.append("email", "ali@example.com");
+
+// for (let [key, value] of fd.entries()) {
+//   console.log(`${key}: ${value}`);
+// }
+// name: Ali
+// email: ali@example.com
+
+//demak formData object ga xos hislatlarni nomoyon qiladi
+// bundan kelib chiqadiki formdatadan object yasash mumkin
+
+const newObj = Object.fromEntries(FormData.entries());
