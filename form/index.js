@@ -154,3 +154,36 @@ const newObj = Object.fromEntries(FormData.entries());
 //minlength ------Minimum belgilar soni
 //maxlength ------Maxsimum belgilar soni
 //pattern -------regex orqali format tekshirish
+//min, max ------sonlar uchun chekgaralar
+
+{
+  /* <form>
+  <input type="text" name="username" required minlength="3">
+  <input type="email" name="email" required>
+  <input type="number" name="age" min="18" max="60">
+  <button type="submit">Submit</button>
+</form> */
+}
+
+//JS da validatsiya
+// const form = document.getElementById('myForm');
+// const username = document.getElementById('username');
+// const email = document.getElementById('email');
+// const error = document.getElementById('error');
+
+// form.addEventListener('submit', function(e) {
+//   e.preventDefault(); // Formani to‘xtat
+
+//   if (username.value.trim() === '' || email.value.trim() === '') {
+//     error.textContent = "Iltimos, barcha maydonlarni to'ldiring.";
+//     return;
+//   }
+
+//   if (!email.value.includes('@')) {
+//     error.textContent = "Email noto‘g‘ri formatda.";
+//     return;
+//   }
+
+//   error.textContent = "";
+//   alert("Forma yuborildi!");
+// });
