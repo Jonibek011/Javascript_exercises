@@ -189,22 +189,40 @@ const newObj = Object.fromEntries(FormData.entries());
 // });
 
 //Form malumotlarini jo'natish
-const formData = new FormData(form);
-fetch("/sumbit", {
-  method: "POST",
-  body: formData,
-})
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+// const formData = new FormData(form);
+// fetch("/sumbit", {
+//   method: "POST",
+//   body: formData,
+// })
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
 
 //Asynchron validatsiya
 
-input.addEventlistener("blur", () => {
-  fetch(`/check-username?username=${input.value}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if (!data.available) {
-        alert("Username band");
-      }
-    });
-});
+// input.addEventlistener("blur", () => {
+//   fetch(`/check-username?username=${input.value}`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       if (!data.available) {
+//         alert("Username band");
+//       }
+//     });
+// });
+
+//8. Fayl yuborish
+{
+  /* <input type="file" name="avatar"></input> */
+}
+// const formData = new FormData(form)
+// fetch('/upload', {
+//   method: "POST",
+//   body:formData
+// })
+
+//9. Dinamik formalar - javascriptdan turib HTML siz yangi inputlar yaratib UI ga qo'shish mumkin
+// const newInput = document.createElement('input')
+// newInput.name = 'phone'
+// form.appendChild(newInput)
+
+//10. Formaga reset berish
+// form.reset() // barcha qiymatlarni tozalaydi
