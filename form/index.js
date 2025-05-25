@@ -139,3 +139,18 @@
 // bundan kelib chiqadiki formdatadan object yasash mumkin
 
 const newObj = Object.fromEntries(FormData.entries());
+
+//=====================================================================
+//Form validatsiya -ikki turda bo'ladi
+// 1. HTML5 (browserda avtomatik) validatsiya
+// 2. Javascript orqali custom validatsiya
+
+//✅ 1. HTML5 validatsiyasi - html arrtibutlar orqali ishlaydi
+//bu minimal code bilan asosiy tekshiruvlarni bajaradi
+
+//⚙️ HTML atributlar:
+// required ------maydon bo'sh bo'lmasligi kerak
+//type="email" ---Email format bo'lishi kerak
+//minlength ------Minimum belgilar soni
+//maxlength ------Maxsimum belgilar soni
+//pattern -------regex orqali format tekshirish
